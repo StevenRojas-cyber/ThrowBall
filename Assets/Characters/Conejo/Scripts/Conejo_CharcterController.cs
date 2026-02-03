@@ -24,6 +24,6 @@ public class Conejo_CharcterController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        CharacterBody2D.linearVelocity = new Vector2(moveDirection.x * speed, moveDirection.y * speed);
+        CharacterBody2D.linearVelocity = new Vector2(moveDirection.x * speed, moveDirection.y*speed);
     }
 }

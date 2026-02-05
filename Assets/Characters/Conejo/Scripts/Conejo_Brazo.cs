@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Conejo_Brazo : MonoBehaviour
 {
-    public Sprite ArmSprite;
+    
 
     
     void Start()

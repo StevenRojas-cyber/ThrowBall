@@ -3,28 +3,19 @@ using UnityEngine;
 
 public class Zanahoria : Items
 {
-    public BoxCollider2D Hitbox;
-    GameObject Player;
+    /*public BoxCollider2D Hitbox;
+    GameObject Player;*/
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.CompareTag("Player"))
-        {
-            Player = collision.gameObject;
-            Debug.Log("El jugador ha recogido una zanahoria.");
-            Hitbox.enabled = false;
-            this.gameObject.SetActive(false);
-        }
-    }
+   // bool isPickedUp = false;
 
     void Start()
     {
-        itemObject = this.gameObject;
-        itemName = itemObject.name;
+        //itemObject = this.gameObject;
+       // itemName = itemObject.name;
        
-        Hitbox.enabled = true;
+       // Hitbox.enabled = true;
 
-        PrintName();
+        //PrintName();
     }
 
     private void Update()

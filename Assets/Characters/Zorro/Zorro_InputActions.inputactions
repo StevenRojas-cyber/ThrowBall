@@ -3,7 +3,7 @@
     "name": "Zorro_InputActions",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Actions_Zorro",
             "id": "d7640418-9e0f-4f20-9c2d-0e136f275d7e",
             "actions": [
                 {
@@ -11,6 +11,15 @@
                     "type": "PassThrough",
                     "id": "665f460c-ec72-4ffa-903a-5934e279fcd0",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PickUp",
+                    "type": "Button",
+                    "id": "76bca24a-3d31-458a-a88a-d2c8af60c1e7",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -49,6 +58,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "e5c110a1-730c-47fe-9831-e42d0eeef4d2",
+                    "path": "<Keyboard>/upArrow",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PickUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

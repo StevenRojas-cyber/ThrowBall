@@ -3,7 +3,7 @@
     "name": "ConejoActions",
     "maps": [
         {
-            "name": "Movement",
+            "name": "Actions_Conejo",
             "id": "6cd83b10-f709-412e-9636-811602c104f6",
             "actions": [
                 {
@@ -11,6 +11,15 @@
                     "type": "PassThrough",
                     "id": "c730f8e7-b0d0-41d2-9692-f335cc22c80a",
                     "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "PickUp",
+                    "type": "Button",
+                    "id": "05edbebf-35c5-4a20-8703-f7db1b5f611a",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
@@ -49,6 +58,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "12eee2b0-1843-4622-9b9e-1ac232cb60ca",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PickUp",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

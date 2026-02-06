@@ -5,6 +5,7 @@ public class Zorro_CharacterController : MonoBehaviour
 {
     public float speed = 5f;
     public InputActionReference moveAction;
+    public InputActionReference pickUpAction;
 
     private Rigidbody2D rb;
     private Vector2 move;

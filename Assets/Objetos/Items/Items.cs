@@ -32,36 +32,48 @@ public class Items : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       UserController = collision.gameObject.GetComponent<Conejo_CharcterController>();
-        if (UserController == null) return;
+        string name = collision.gameObject.name;
 
-        playerInside = true;
-        UserController.GetComponent<Conejo_CharcterController>().pickUpAction.action.Enable();
-    }
-
-    /*private void OnTriggerStay2D(Collider2D collision)
-    {
-        User = collision.gameObject;
-        
-        User.GetComponent<Conejo_CharcterController>().pickUpAction.action.Enable();
-        User.GetComponent<Conejo_CharcterController>().CheckPickup();
-
-        if (User.GetComponent<Conejo_CharcterController>().pickUpAction.action.ReadValue<float>() > 0)
+        //En Caso de que el jugador que entre en el hitbox del item sea el Player 1
+        if (name == "Player 1")
         {
-            PickUp();
+            UserController = collision.gameObject.GetComponent<Conejo_CharcterController>();
+            if (UserController == null) return;
+
+            playerInside = true;
+            UserController.GetComponent<Conejo_CharcterController>().pickUpAction.action.Enable();
+
         }
 
-    }*/
+
+        //En Caso de que el jugador que entre en el hitbox del item sea el Player 2
+        if (name == "Player 2")
+        {
+            UserController = collision.gameObject.GetComponent<Zorro_CharacterController>();
+            if (UserController == null) return;
+            playerInside = true;
+            UserController.GetComponent<Zorro_CharacterController>().pickUpAction.action.Enable();
+        }
+
+    }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.GetComponent<Conejo_CharcterController>() == UserController)
+        //En Caso de que el jugador que entre en el hitbox del item sea el Player 1
+        if (collision.GetComponent<Conejo_CharcterController>() == UserController)
         {
             playerInside = false;
             UserController.GetComponent<Conejo_CharcterController>().pickUpAction.action.Disable();
             UserController = null;
         }
 
+        //En Caso de que el jugador que entre en el hitbox del item sea el Player 2
+        if (collision.GetComponent<Zorro_CharacterController>() == UserController)
+        {
+            playerInside = false;
+            UserController.GetComponent<Zorro_CharacterController>().pickUpAction.action.Disable();
+            UserController = null;
+        }
     }
 
     public bool CanBePickedUp()

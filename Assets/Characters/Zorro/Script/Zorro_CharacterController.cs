@@ -7,6 +7,8 @@ public class Zorro_CharacterController : MonoBehaviour
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
 
+    public Zorro_Brazo PlayerArm;
+
     private Rigidbody2D rb;
     private Vector2 move;
 

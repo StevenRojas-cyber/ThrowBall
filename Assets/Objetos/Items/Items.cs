@@ -37,18 +37,19 @@ public class Items : MonoBehaviour
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 1
         if (name == "Player 1")
         {
+            User = collision.gameObject;
             UserController = collision.gameObject.GetComponent<Conejo_CharcterController>();
             if (UserController == null) return;
 
             playerInside = true;
             UserController.GetComponent<Conejo_CharcterController>().pickUpAction.action.Enable();
-
         }
 
 
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 2
         if (name == "Player 2")
         {
+            User = collision.gameObject;
             UserController = collision.gameObject.GetComponent<Zorro_CharacterController>();
             if (UserController == null) return;
             playerInside = true;
@@ -65,6 +66,7 @@ public class Items : MonoBehaviour
             playerInside = false;
             UserController.GetComponent<Conejo_CharcterController>().pickUpAction.action.Disable();
             UserController = null;
+            User = null;
         }
 
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 2
@@ -73,6 +75,7 @@ public class Items : MonoBehaviour
             playerInside = false;
             UserController.GetComponent<Zorro_CharacterController>().pickUpAction.action.Disable();
             UserController = null;
+            User = null;
         }
     }
 
@@ -83,8 +86,20 @@ public class Items : MonoBehaviour
 
     public void PickUp()
     {
-        Debug.Log("Picked up: " + itemName);
+        //Debug.Log("Picked up: " + itemName);
+
+        if(User.name == "Player 1")
+        {
+            UserController.GetComponent<Conejo_CharcterController>().PlayerArm.SetItemInHand(this);
+            UserController.GetComponent<Conejo_CharcterController>().PlayerArm.AttachItemHand(this);
+
+        }
+        else if(User.name == "Player 2")
+        {
+            UserController.GetComponent<Zorro_CharacterController>().PlayerArm.SetItemInHand(this);
+            UserController.GetComponent<Zorro_CharacterController>().PlayerArm.AttachItemHand(this);
+        }
         Hitbox.enabled = false;
-        this.gameObject.SetActive(false);
+        //this.gameObject.SetActive(false);
     }
 }

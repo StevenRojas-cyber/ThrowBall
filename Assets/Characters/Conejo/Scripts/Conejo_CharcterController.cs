@@ -6,6 +6,7 @@ public class Conejo_CharcterController : MonoBehaviour
     public float speed = 5.0f;
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
+    public Conejo_Brazo PlayerArm;
 
     private Vector2 moveDirection;
     private Items currentItem;
@@ -13,7 +14,6 @@ public class Conejo_CharcterController : MonoBehaviour
     Rigidbody2D CharacterBody2D;
 
     public bool enabledPickUp = false;
-    float pickUpValue = 0f;
 
 
 
@@ -42,14 +42,6 @@ public class Conejo_CharcterController : MonoBehaviour
     private void FixedUpdate()
     {
         CharacterBody2D.linearVelocity = new Vector2(moveDirection.x * speed, moveDirection.y*speed);
-    }
-
-
-
-    public void CheckPickup()
-    {
-        pickUpValue = pickUpAction.action.ReadValue<float>();
-        print("PickUp Value: " + pickUpValue);
     }
 
 

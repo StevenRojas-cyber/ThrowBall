@@ -1,21 +1,28 @@
 using UnityEngine;
 
-public class Conejo_Brazo : MonoBehaviour
+public class Zorro_Brazo : MonoBehaviour
 {
-
     public GameObject OwnerPlayer;
     Items CurrentItemInHand;
 
+
+
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        string name = OwnerPlayer.name;
-        print("Owner Player: " + name);
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 
     public void SetItemInHand(Items item)
     {
         CurrentItemInHand = item;
-        
+
     }
 
     public void AttachItemHand(Items item)
@@ -25,11 +32,4 @@ public class Conejo_Brazo : MonoBehaviour
         item.transform.localPosition = Vector3.zero;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (CurrentItemInHand == null) return;
-
-        Debug.Log(CurrentItemInHand.name);
-    }
 }

@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 4226474243413075490}
   - component: {fileID: 82624494627035490}
   - component: {fileID: -7291357148781799146}
+  - component: {fileID: 801893185384919057}
   m_Layer: 0
-  m_Name: Item_Zanahoria_Pickup
+  m_Name: Item_Zanahoria_pickup
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5848084394140079452}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: -0, z: 0.004311124, w: -0.9999907}
   m_LocalPosition: {x: -3.9442, y: -2.3, z: 0}
   m_LocalScale: {x: 0.2032676, y: 0.1858211, z: 0.18682998}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359.506}
 --- !u!212 &9000569743225555914
 SpriteRenderer:
   serializedVersion: 2
@@ -82,7 +83,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2008349407892447889, guid: 5ae01ba471f61b74490ae6c02d2a5c0f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -110,8 +111,7 @@ MonoBehaviour:
   itemTrowAngle: 45
   itemTrowVelocity: 12
   itemObject: {fileID: 0}
-  Hitbox: {fileID: 0}
-  itemBody: {fileID: 0}
+  Hitbox: {fileID: 82624494627035490}
 --- !u!58 &82624494627035490
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,8 +146,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.29723558, y: 0.06096497}
-  m_Radius: 5.3026056
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 5.63
 --- !u!50 &-7291357148781799146
 Rigidbody2D:
   serializedVersion: 5
@@ -175,3 +175,49 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!61 &801893185384919057
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848084394140079452}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.83, y: 7.67}
+    newSize: {x: 2.83, y: 7.67}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.83, y: 7.67}
+  m_EdgeRadius: 0

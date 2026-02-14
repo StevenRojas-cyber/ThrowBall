@@ -6,13 +6,14 @@ public class Zorro_CharacterController : MonoBehaviour
     public float speed = 5f;
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
+    public InputActionReference trowAction;
 
     public Zorro_Brazo PlayerArm;
 
     private Rigidbody2D rb;
     private Vector2 move;
 
-    private Items currentItem;
+    private Items currentItemGround;
     public bool enabledPickUp = false;
   
 
@@ -20,16 +21,34 @@ public class Zorro_CharacterController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         moveAction.action.Enable();
+        pickUpAction.action.Disable();
+        trowAction.action.Disable();
     }
 
     void Update()
     {
         move = moveAction.action.ReadValue<Vector2>();
 
-        if (currentItem != null && pickUpAction.action.WasPressedThisFrame())
+        if (pickUpAction.action.WasPressedThisFrame())
         {
-            currentItem.PickUp();
+
+            if (currentItemGround != null && PlayerArm.IsHandEmpty())
+            {
+                currentItemGround.PickUp();
+
+            }
         }
+
+        if (trowAction.action.WasPressedThisFrame())
+        {
+            if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
+            {
+                PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);
+                //print("trying trow item");
+
+            }
+        }
+
     }
 
     void FixedUpdate()
@@ -44,7 +63,7 @@ public class Zorro_CharacterController : MonoBehaviour
         Items item = collision.GetComponent<Items>();
         if (item != null)
         {
-            currentItem = item;
+            currentItemGround = item;
         }
     }
 
@@ -53,10 +72,12 @@ public class Zorro_CharacterController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         Items item = collision.GetComponent<Items>();
-        if (item == currentItem)
+        if (item == currentItemGround)
         {
-            currentItem = null;
+            currentItemGround = null;
         }
     }
+
+
 
 }

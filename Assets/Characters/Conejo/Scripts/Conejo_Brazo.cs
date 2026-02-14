@@ -38,6 +38,7 @@ public class Conejo_Brazo : MonoBehaviour
         item.transform.SetParent(transform);
         item.transform.localPosition = Vector3.zero;
         item.transform.Rotate(0,0,90);
+        item.GetComponent<Rigidbody2D>().simulated = false;
 
         CurrentHandState = HandState.HoldingItem;
         OwnerPlayer.GetComponent<Conejo_CharcterController>().trowAction.action.Enable();
@@ -50,7 +51,8 @@ public class Conejo_Brazo : MonoBehaviour
 
         print("Trowing item: " + item.name);
         item.transform.SetParent(null);
-        //item.GetComponent<Rigidbody2D>().linearVelocity = OwnerPlayer.transform.right * item.itemTrowVelocity;
+        item.GetComponent<Rigidbody2D>().simulated = true;
+        item.GetComponent<Rigidbody2D>().linearVelocity = OwnerPlayer.transform.right * item.itemTrowVelocity;
         
         CurrentHandState = HandState.Empty;
         OwnerPlayer.GetComponent<Conejo_CharcterController>().trowAction.action.Disable();

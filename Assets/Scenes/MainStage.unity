@@ -257,6 +257,11 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!1 &440722157 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5848084394140079452, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
+  m_PrefabInstance: {fileID: 6891646447969428395}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1864,7 +1869,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 82624494627035490, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_Radius
-      value: 5.6
+      value: 5.63
       objectReference: {fileID: 0}
     - target: {fileID: 82624494627035490, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_Offset.x
@@ -1900,11 +1905,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6826614735792468009, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.99999005
+      value: -0.99999076
       objectReference: {fileID: 0}
     - target: {fileID: 6826614735792468009, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 6826614735792468009, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_LocalRotation.y
@@ -1912,7 +1917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6826614735792468009, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.0044682287
+      value: 0.0043044677
       objectReference: {fileID: 0}
     - target: {fileID: 6826614735792468009, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -1924,23 +1929,71 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6826614735792468009, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 359.488
+      value: 359.507
       objectReference: {fileID: 0}
     - target: {fileID: 9000569743225555914, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -7291357148781799146, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5848084394140079452, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6891646447969428405}
   m_SourcePrefab: {fileID: 100100000, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
 --- !u!58 &6891646447969428402 stripped
 CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 82624494627035490, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
   m_PrefabInstance: {fileID: 6891646447969428395}
   m_PrefabAsset: {fileID: 0}
+--- !u!61 &6891646447969428405
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 440722157}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.83, y: 7.67}
+    newSize: {x: 2.83, y: 7.67}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.83, y: 7.67}
+  m_EdgeRadius: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

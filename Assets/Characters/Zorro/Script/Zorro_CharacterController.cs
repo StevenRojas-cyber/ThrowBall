@@ -14,7 +14,7 @@ public class Zorro_CharacterController : MonoBehaviour
 
     private Items currentItem;
     public bool enabledPickUp = false;
-    float pickUpValue = 0f;
+  
 
     void Start()
     {

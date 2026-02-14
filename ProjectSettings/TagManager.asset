@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Item
+  - Conejo_Player
+  - Zorro_Player
   layers:
   - Default
   - TransparentFX

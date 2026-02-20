@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 82624494627035490}
   - component: {fileID: -7291357148781799146}
   - component: {fileID: 801893185384919057}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Item_Zanahoria_pickup
   m_TagString: Item
   m_Icon: {fileID: 0}

@@ -7,8 +7,8 @@ public class Zanahoria : Items
     private void Start()
     {
         itemName = "Zanahoria";
-        itemTrowAngle = 45f;
-        itemTrowVelocity = 10f;
+        itemTrowAngle = 50f;
+        itemTrowVelocity = 15f;
         
     }
 

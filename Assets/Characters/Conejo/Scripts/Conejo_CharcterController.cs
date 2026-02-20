@@ -30,14 +30,6 @@ public class Conejo_CharcterController : MonoBehaviour
     {
         moveDirection = moveAction.action.ReadValue<Vector2>();
 
-        if(currentItemGround != null)
-        {
-            //print("currentItemGround: " + currentItemGround.name);
-
-        }
-
-
-        //print("PickUpAction : " + pickUpAction.action.enabled);
 
         if(pickUpAction.action.WasPressedThisFrame())
         {
@@ -54,14 +46,10 @@ public class Conejo_CharcterController : MonoBehaviour
             if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
             {
                 PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);
-                //print("trying trow item");
                 
             }
         }
 
-        
-
-        
     }
 
     private void FixedUpdate()

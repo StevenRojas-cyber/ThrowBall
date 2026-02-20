@@ -7,16 +7,17 @@ TagManager:
   - Item
   - Conejo_Player
   - Zorro_Player
+  - Walls
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Item
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - Ground
+  - Walls
   - 
   - 
   - 

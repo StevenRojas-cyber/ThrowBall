@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 194052174}
   - component: {fileID: 194052173}
   - component: {fileID: 194052175}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Ground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,59 +478,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &743904856 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3627149537789837655, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
-  m_PrefabInstance: {fileID: 1963939465}
-  m_PrefabAsset: {fileID: 0}
---- !u!58 &743904857
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743904856}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_CompositeOperation: 0
-  m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 5.6
---- !u!114 &743904860
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 743904856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5244cf44d8ee9fd4b8617daa01fc6ecb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1001 &845617954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -599,9 +546,9 @@ GameObject:
   - component: {fileID: 1176236163}
   - component: {fileID: 1176236162}
   - component: {fileID: 1176236161}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Valla
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -737,7 +684,7 @@ GameObject:
   - component: {fileID: 1272809241}
   - component: {fileID: 1272809243}
   - component: {fileID: 1272809242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: P1_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -846,7 +793,7 @@ GameObject:
   - component: {fileID: 1435353368}
   - component: {fileID: 1435353367}
   - component: {fileID: 1435353371}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player 2
   m_TagString: Zorro_Player
   m_Icon: {fileID: 0}
@@ -1030,7 +977,7 @@ GameObject:
   - component: {fileID: 1555190493}
   - component: {fileID: 1555190492}
   - component: {fileID: 1555190491}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: P2_Arm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1137,9 +1084,9 @@ GameObject:
   - component: {fileID: 1787672130}
   - component: {fileID: 1787672129}
   - component: {fileID: 1787672131}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Techo
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1275,9 +1222,9 @@ GameObject:
   - component: {fileID: 1888717502}
   - component: {fileID: 1888717501}
   - component: {fileID: 1888717503}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Margen Izquierdo
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1402,7 +1349,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!1001 &1963939465
+--- !u!1001 &2060968183
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -1412,23 +1359,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3284874866118113406, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.20599233
+      value: 0.28343096
       objectReference: {fileID: 0}
     - target: {fileID: 3284874866118113406, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.20599233
+      value: 0.26086134
       objectReference: {fileID: 0}
     - target: {fileID: 3284874866118113406, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.20599233
+      value: 0.35098997
       objectReference: {fileID: 0}
     - target: {fileID: 3284874866118113406, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.9
+      value: -2.3674
       objectReference: {fileID: 0}
     - target: {fileID: 3284874866118113406, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.36
+      value: -2.401
       objectReference: {fileID: 0}
     - target: {fileID: 3284874866118113406, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1466,37 +1413,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ladrillo_Item
       objectReference: {fileID: 0}
-    - target: {fileID: 3627149537789837655, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
-      propertyPath: m_TagString
-      value: Item
+    - target: {fileID: 7334621030430352534, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
+      propertyPath: m_Radius
+      value: 4.8
       objectReference: {fileID: 0}
-    - target: {fileID: 8104586630363573672, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
-      propertyPath: m_FlipX
+    - target: {fileID: 7334621030430352534, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
+      propertyPath: m_Offset.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8104586630363573672, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
-      propertyPath: m_FlipY
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8104586630363573672, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
-      propertyPath: m_DrawMode
-      value: 0
+    - target: {fileID: 7334621030430352534, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8104586630363573672, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: -7899361228055144367, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3627149537789837655, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 743904857}
-    - targetCorrespondingSourceObject: {fileID: 3627149537789837655, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 743904860}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c34d0400c98cc7a4e99beec29a364456, type: 3}
 --- !u!1 &2062187086
 GameObject:
@@ -1512,7 +1448,7 @@ GameObject:
   - component: {fileID: 2062187091}
   - component: {fileID: 2062187094}
   - component: {fileID: 2062187093}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player 1
   m_TagString: Conejo_Player
   m_Icon: {fileID: 0}
@@ -1726,9 +1662,9 @@ GameObject:
   - component: {fileID: 2089867543}
   - component: {fileID: 2089867542}
   - component: {fileID: 2089867544}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Margen derecho
-  m_TagString: Untagged
+  m_TagString: Walls
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1865,6 +1801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Item_Zanahoria_pickup
       objectReference: {fileID: 0}
+    - target: {fileID: 5848084394140079452, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 6826614735792468009, guid: ba8c15cec387e7e4181b7f5ccf70302f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.94
@@ -1924,5 +1864,5 @@ SceneRoots:
   - {fileID: 1787672130}
   - {fileID: 1176236163}
   - {fileID: 6891646447969428395}
-  - {fileID: 1963939465}
   - {fileID: 845617954}
+  - {fileID: 2060968183}

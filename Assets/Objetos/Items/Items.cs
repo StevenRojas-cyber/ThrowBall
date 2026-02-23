@@ -20,7 +20,6 @@ public class Items : MonoBehaviour
     void Start()
     {
         PrintName();
-        
     }
 
     // Update is called once per frame

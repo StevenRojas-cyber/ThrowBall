@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.05461, y: -1.803, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3697641, y: 0.34031978, z: 0.45790157}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ladrillo_PickUp
   itemName: 
-  itemTrowAngle: 0
-  itemTrowVelocity: 0
+  itemTrowAngle: 30
+  itemTrowVelocity: 60
   itemObject: {fileID: 0}
   Hitbox: {fileID: 7334621030430352534}
 --- !u!58 &7334621030430352534
@@ -169,12 +169,12 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 4.8
+  m_Radius: 10.5
 --- !u!61 &-607412141808437228
 BoxCollider2D:
   m_ObjectHideFlags: 0

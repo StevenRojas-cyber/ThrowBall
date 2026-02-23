@@ -29,6 +29,16 @@ public class Zorro_CharacterController : MonoBehaviour
     {
         move = moveAction.action.ReadValue<Vector2>();
 
+        if (move.x > 0)
+        {
+            transform.localScale = new Vector3(1, 1, 1);
+        }
+        else if (move.x < 0)
+        {
+            transform.localScale = new Vector3(-1, 1, 1);
+        }
+
+
         if (pickUpAction.action.WasPressedThisFrame())
         {
 
@@ -44,8 +54,7 @@ public class Zorro_CharacterController : MonoBehaviour
             if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
             {
                 PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);
-                //print("trying trow item");
-
+               
             }
         }
 
@@ -53,7 +62,8 @@ public class Zorro_CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(move.x * speed, rb.linearVelocity.y);
+        rb.linearVelocity = new Vector2(move.x * speed, -rb.gravityScale);
+        rb.SetRotation(0);
     }
 
 

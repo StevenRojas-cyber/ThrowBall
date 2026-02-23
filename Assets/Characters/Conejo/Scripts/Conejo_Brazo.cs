@@ -70,15 +70,16 @@ public class Conejo_Brazo : MonoBehaviour
 
 
         float angleRadians = item.itemTrowAngle * Mathf.Deg2Rad;
-        float direction = Mathf.Sign(OwnerPlayer.transform.localScale.x);
+        //float direction = Mathf.Sign(OwnerPlayer.transform.localScale.x);
+        float facingDirection = Mathf.Sign(OwnerPlayer.transform.localScale.x);
 
-        Vector2 throwDirection = new Vector2(Mathf.Cos(angleRadians) * direction, Mathf.Sin(angleRadians));
 
-        item.transform.position = OwnerPlayer.transform.position + (Vector3)(throwDirection * 0.5f); // Ajusta la posición de lanzamiento según sea necesario
+        Vector2 throwDirection = new Vector2(Mathf.Cos(angleRadians) * facingDirection, Mathf.Sin(angleRadians));
+
+        item.transform.position = OwnerPlayer.transform.position + (Vector3)(throwDirection.normalized * 3.5f); // Ajusta la posición de lanzamiento según sea necesario
 
         Physics2D.IgnoreCollision(itemCol, playerCol, true);
 
-        //item.GetComponent<Rigidbody2D>().linearVelocity = OwnerPlayer.transform.right * item.itemTrowVelocity;
 
         itemRB.linearVelocity = throwDirection * item.itemTrowVelocity;
 

@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0, z: 0.004311124, w: -0.9999907}
   m_LocalPosition: {x: -3.9442, y: -2.3, z: 0}
-  m_LocalScale: {x: 0.2032676, y: 0.1858211, z: 0.18682998}
+  m_LocalScale: {x: 0.33262712, y: 0.30407766, z: 0.30572858}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -108,8 +108,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Zanahoria
   itemName: Zanahoria
-  itemTrowAngle: 45
-  itemTrowVelocity: 12
+  itemTrowAngle: 40
+  itemTrowVelocity: 200
   itemObject: {fileID: 0}
   Hitbox: {fileID: 82624494627035490}
 --- !u!58 &82624494627035490
@@ -147,7 +147,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 5.63
+  m_Radius: 10.5
 --- !u!50 &-7291357148781799146
 Rigidbody2D:
   serializedVersion: 5
@@ -219,5 +219,5 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.83, y: 7.67}
+  m_Size: {x: 1.96, y: 5.52}
   m_EdgeRadius: 0

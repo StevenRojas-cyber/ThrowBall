@@ -206,7 +206,7 @@ Transform:
   m_GameObject: {fileID: 194052171}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: -9.92, z: 0}
+  m_LocalPosition: {x: 0.21, y: -10.16, z: 0}
   m_LocalScale: {x: 38.289074, y: 1.8762287, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -633,8 +633,8 @@ Transform:
   m_GameObject: {fileID: 1166848047}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0579, y: -1.4618, z: 0}
-  m_LocalScale: {x: 1.6585265, y: 1.6514009, z: 1.7167073}
+  m_LocalPosition: {x: 0.0083, y: -1.5623, z: 0}
+  m_LocalScale: {x: 1.6694834, y: 1.6700617, z: 1.7167073}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1004,7 +1004,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31ace9ee131c33a4cadb07367b1ba45c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 6
+  speed: 10
   moveAction: {fileID: 3762077382282410050, guid: c7030c85d1de3804fa529fb39d236abd, type: 3}
   pickUpAction: {fileID: 7452934904994990023, guid: c7030c85d1de3804fa529fb39d236abd, type: 3}
   trowAction: {fileID: 3895309467214480933, guid: c7030c85d1de3804fa529fb39d236abd, type: 3}
@@ -1455,7 +1455,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Conejo_CharcterController
   enabledPickUp: 0
-  speed: 6
+  speed: 10
   moveAction: {fileID: -4416519446200486364, guid: 8956b02dba360c54b92fcd7497de6c16, type: 3}
   pickUpAction: {fileID: 8975809484785049918, guid: 8956b02dba360c54b92fcd7497de6c16, type: 3}
   trowAction: {fileID: -6517206053452248404, guid: 8956b02dba360c54b92fcd7497de6c16, type: 3}

@@ -9,6 +9,7 @@ TagManager:
   - Zorro_Player
   - Walls
   - Ground
+  - Balll
   layers:
   - Default
   - TransparentFX
@@ -19,7 +20,7 @@ TagManager:
   - Player
   - Ground
   - Walls
-  - 
+  - Ball
   - 
   - 
   - 

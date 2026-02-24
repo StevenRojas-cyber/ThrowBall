@@ -10,7 +10,7 @@ public class Items : MonoBehaviour
 
     public GameObject itemObject;
     public CircleCollider2D Hitbox;
-    
+
 
     GameObject User;
 
@@ -28,6 +28,7 @@ public class Items : MonoBehaviour
 
     private void Awake()
     {
+
     }
 
     void Start()
@@ -104,7 +105,7 @@ public class Items : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Balll"))
         {
             if (currentState == ItemState.Throwed)
             {

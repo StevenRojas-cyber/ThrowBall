@@ -48,7 +48,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -139,6 +139,7 @@ MonoBehaviour:
   itemTrowVelocity: 60
   itemObject: {fileID: 0}
   Hitbox: {fileID: 7334621030430352534}
+  currentState: 0
 --- !u!58 &7334621030430352534
 CircleCollider2D:
   m_ObjectHideFlags: 0

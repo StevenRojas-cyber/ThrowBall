@@ -9,7 +9,8 @@ public class Zanahoria : Items
         itemName = "Zanahoria";
         itemTrowAngle = 50f;
         itemTrowVelocity = 15f;
-        
+     
+
     }
 
 

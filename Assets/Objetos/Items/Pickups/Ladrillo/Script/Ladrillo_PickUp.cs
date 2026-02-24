@@ -8,6 +8,7 @@ public class Ladrillo_PickUp : Items
         itemName = "Ladrillo";
         itemTrowAngle = 45f;
         itemTrowVelocity = 10f;
+     
     }
 
     // Update is called once per frame

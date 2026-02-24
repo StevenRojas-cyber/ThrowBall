@@ -55,6 +55,7 @@ public class Conejo_Brazo : MonoBehaviour
         Collider2D itemCol = item.GetComponent<Collider2D>();
         Collider2D playerCol = OwnerPlayer.GetComponent<Collider2D>();
 
+        item.currentState = Items.ItemState.Throwed;
         
 
 

@@ -65,6 +65,8 @@ public class Zorro_Brazo : MonoBehaviour
 
         itemCol.isTrigger = false;
 
+        item.currentState = Items.ItemState.Throwed;
+
         float angleRadians = item.itemTrowAngle * Mathf.Deg2Rad;
         //float direction = Mathf.Sign(OwnerPlayer.transform.localScale.x);
         float facingDirection = Mathf.Sign(OwnerPlayer.transform.localScale.x);

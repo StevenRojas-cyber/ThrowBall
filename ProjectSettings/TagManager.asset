@@ -8,6 +8,7 @@ TagManager:
   - Conejo_Player
   - Zorro_Player
   - Walls
+  - Ground
   layers:
   - Default
   - TransparentFX

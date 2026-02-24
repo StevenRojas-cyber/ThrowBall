@@ -1,3 +1,4 @@
+using System.Collections;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -16,6 +17,18 @@ public class Items : MonoBehaviour
     private bool playerInside;
     private Component UserController;
 
+    public enum ItemState
+    {
+        OnGround,
+        Throwed
+    }
+
+    public ItemState currentState = ItemState.OnGround;
+
+
+    private void Awake()
+    {
+    }
 
     void Start()
     {
@@ -25,7 +38,7 @@ public class Items : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        print("Current state: " + currentState);
     }
 
     protected virtual void PrintName()
@@ -89,8 +102,27 @@ public class Items : MonoBehaviour
     }
 
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            if (currentState == ItemState.Throwed)
+            {
+                StartCoroutine(DespawnItem());
+            }
+            else
+            {
+                currentState = ItemState.OnGround;
+            }
+        }
+    }
 
 
+    private IEnumerator DespawnItem()
+    {
+        yield return new WaitForSeconds(1f);
+        Destroy(this.gameObject);
+    }
 
     public bool CanBePickedUp()
     {

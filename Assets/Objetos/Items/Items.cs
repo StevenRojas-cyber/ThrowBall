@@ -10,7 +10,7 @@ public class Items : MonoBehaviour
 
     public GameObject itemObject;
     public CircleCollider2D Hitbox;
-
+    public BoxCollider2D itemBodyCollision;
 
     GameObject User;
 
@@ -39,7 +39,7 @@ public class Items : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        print("Current state: " + currentState);
+      
     }
 
     protected virtual void PrintName()
@@ -58,6 +58,10 @@ public class Items : MonoBehaviour
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 1
         if (name == "Player 1")
         {
+            Collider2D itemBody = itemBodyCollision;
+            Collider2D playerCol = collision.GetComponent<Collider2D>();
+            Physics2D.IgnoreCollision(itemBody, playerCol, true);
+
             User = collision.gameObject;
             UserController = collision.gameObject.GetComponent<Conejo_CharcterController>();
             if (UserController == null) return;
@@ -70,6 +74,10 @@ public class Items : MonoBehaviour
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 2
         if (name == "Player 2")
         {
+            Collider2D itemBody = itemBodyCollision;
+            Collider2D playerCol = collision.GetComponent<Collider2D>();
+            Physics2D.IgnoreCollision(itemBody, playerCol, true);
+
             User = collision.gameObject;
             UserController = collision.gameObject.GetComponent<Zorro_CharacterController>();
             if (UserController == null) return;
@@ -84,6 +92,10 @@ public class Items : MonoBehaviour
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 1
         if (collision.CompareTag("Conejo_Player"))
         {
+            Collider2D itemBody = itemBodyCollision;
+            Collider2D playerCol = collision.GetComponent<Collider2D>();
+            Physics2D.IgnoreCollision(itemBody, playerCol, false);
+
             playerInside = false;
             UserController.GetComponent<Conejo_CharcterController>().pickUpAction.action.Disable();
             UserController = null;
@@ -94,6 +106,10 @@ public class Items : MonoBehaviour
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 2
         if (collision.CompareTag("Zorro_Player"))
         {
+            Collider2D itemBody = itemBodyCollision;
+            Collider2D playerCol = collision.GetComponent<Collider2D>();
+            Physics2D.IgnoreCollision(itemBody, playerCol, false);
+
             playerInside = false;
             UserController.GetComponent<Zorro_CharacterController>().pickUpAction.action.Disable();
             UserController = null;

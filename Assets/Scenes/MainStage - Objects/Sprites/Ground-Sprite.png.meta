@@ -1,10 +1,22 @@
 fileFormatVersion: 2
-guid: da6ce1700be875644bc0764caa0dfb05
+guid: e0c5651b3f1abab418fcc1f9300c456d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4705396188752692365
-    second: Background_Final_0
+      213: 829996299536451533
+    second: Ground-Sprite_0
+  - first:
+      213: -5844916210613000497
+    second: Ground-Sprite_1
+  - first:
+      213: -8270869549362192455
+    second: Ground-Sprite_2
+  - first:
+      213: 3480133512204369079
+    second: Ground-Sprite_3
+  - first:
+      213: 5270462406876168605
+    second: Ground-Sprite_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +125,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Background_Final_0
+      name: Ground-Sprite_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 126
-        width: 1920
-        height: 954
+        x: 640
+        y: 164
+        width: 6
+        height: 1
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +140,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 37b3be9b81313beb0800000000000000
-      internalID: -4705396188752692365
+      spriteID: fc66d749cafa2eea0800000000000000
+      internalID: -5844916210613000497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground-Sprite_2
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 131
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9bfdbae37f7f73d80800000000000000
+      internalID: -8270869549362192455
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground-Sprite_3
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 132
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bcbfd5adfaeb4030800000000000000
+      internalID: 3480133512204369079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ground-Sprite_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1920
+        height: 128
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9187eb82a1742940800000000000000
+      internalID: 5270462406876168605
       vertices: []
       indices: 
       edges: []
@@ -138,7 +216,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b0cfa13710b6b9748915cecbcc43a6e9
+    spriteID: 96b03b5f9e00f0b43960f7774499378d
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +226,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Background_Final_0: -4705396188752692365
+      Ground-Sprite_0: 829996299536451533
+      Ground-Sprite_1: -5844916210613000497
+      Ground-Sprite_2: -8270869549362192455
+      Ground-Sprite_3: 3480133512204369079
+      Ground-Sprite_4: 5270462406876168605
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -11,6 +11,7 @@ public class Items : MonoBehaviour
     public GameObject itemObject;
     public CircleCollider2D Hitbox;
     public BoxCollider2D itemBodyCollision;
+    public Rigidbody2D itemRigidBody;
 
     GameObject User;
 

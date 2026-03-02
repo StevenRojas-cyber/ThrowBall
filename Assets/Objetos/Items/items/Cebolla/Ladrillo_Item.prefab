@@ -140,6 +140,7 @@ MonoBehaviour:
   itemObject: {fileID: 0}
   Hitbox: {fileID: 7334621030430352534}
   itemBodyCollision: {fileID: -607412141808437228}
+  itemRigidBody: {fileID: -7899361228055144367}
   currentState: 0
 --- !u!58 &7334621030430352534
 CircleCollider2D:

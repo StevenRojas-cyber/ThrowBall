@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5848084394140079452
+--- !u!1 &41287147310756523
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,42 +8,42 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6826614735792468009}
-  - component: {fileID: 9000569743225555914}
-  - component: {fileID: 4226474243413075490}
-  - component: {fileID: 82624494627035490}
-  - component: {fileID: -7291357148781799146}
-  - component: {fileID: 801893185384919057}
+  - component: {fileID: 3833964100827471462}
+  - component: {fileID: 4800577566347483982}
+  - component: {fileID: 4336852292566186275}
+  - component: {fileID: 7606335242954317293}
+  - component: {fileID: 7735595295912407289}
+  - component: {fileID: 6600548566438971800}
   m_Layer: 3
-  m_Name: Item_Zanahoria_pickup
+  m_Name: Zapallo_Item
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6826614735792468009
+--- !u!4 &3833964100827471462
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5848084394140079452}
+  m_GameObject: {fileID: 41287147310756523}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: -0, z: 0.004311124, w: -0.9999907}
-  m_LocalPosition: {x: -3.9442, y: -2.3, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 30.97, y: -5.37, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 359.506}
---- !u!212 &9000569743225555914
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &4800577566347483982
 SpriteRenderer:
   serializedVersion: 2
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5848084394140079452}
+  m_GameObject: {fileID: 41287147310756523}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -85,43 +85,23 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -6470460504253458178, guid: b65413f254141694b8244e6d194981c7, type: 3}
+  m_Sprite: {fileID: -1622504481773823501, guid: bc5fadb31c41ee244a08318f06cc281c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.83, y: 7.67}
+  m_Size: {x: 1, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4226474243413075490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5848084394140079452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ecf8c5aa1778846ae836fd8c60dc01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Zanahoria
-  itemName: Zanahoria
-  itemTrowAngle: 40
-  itemTrowVelocity: 200
-  itemObject: {fileID: 0}
-  Hitbox: {fileID: 82624494627035490}
-  itemBodyCollision: {fileID: 801893185384919057}
-  itemRigidBody: {fileID: -7291357148781799146}
-  currentState: 0
---- !u!58 &82624494627035490
+--- !u!58 &4336852292566186275
 CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5848084394140079452}
+  m_GameObject: {fileID: 41287147310756523}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -151,40 +131,13 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 3.5
---- !u!50 &-7291357148781799146
-Rigidbody2D:
-  serializedVersion: 5
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5848084394140079452}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1.5
-  m_LinearDamping: 0
-  m_AngularDamping: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &801893185384919057
+--- !u!61 &7606335242954317293
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5848084394140079452}
+  m_GameObject: {fileID: 41287147310756523}
   m_Enabled: 1
   serializedVersion: 3
   m_Density: 1
@@ -212,15 +165,62 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.010746717, y: 0.6972673}
+  m_Offset: {x: 0, y: 0.5346687}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.12, y: 3.11}
-    newSize: {x: 2.83, y: 7.67}
+    oldSize: {x: 1.12, y: 3.04}
+    newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.0718286, y: 1.6619387}
+  m_Size: {x: 1.12, y: 1.9246697}
   m_EdgeRadius: 0
+--- !u!50 &7735595295912407289
+Rigidbody2D:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41287147310756523}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &6600548566438971800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 41287147310756523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 158276ac121fb76489a3c46e496ea434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  itemName: Zapallo
+  itemTrowAngle: 65
+  itemTrowVelocity: 20
+  itemObject: {fileID: 0}
+  Hitbox: {fileID: 4336852292566186275}
+  itemBodyCollision: {fileID: 7606335242954317293}
+  itemRigidBody: {fileID: 7735595295912407289}
+  currentState: 0

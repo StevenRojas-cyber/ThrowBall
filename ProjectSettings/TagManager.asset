@@ -10,6 +10,9 @@ TagManager:
   - Walls
   - Ground
   - Balll
+  - player name
+  - Conejo score
+  - Zorro Score
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class Conejo_CharcterController : MonoBehaviour
     public bool enabledPickUp = false; 
     public float speed = 5.0f;
     
+    
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;

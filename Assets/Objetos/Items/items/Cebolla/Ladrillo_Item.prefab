@@ -135,8 +135,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Ladrillo_PickUp
   itemName: 
-  itemTrowAngle: 30
-  itemTrowVelocity: 60
+  itemTrowAngle: 45
+  itemTrowVelocity: 30
   itemObject: {fileID: 0}
   Hitbox: {fileID: 7334621030430352534}
   itemBodyCollision: {fileID: -607412141808437228}

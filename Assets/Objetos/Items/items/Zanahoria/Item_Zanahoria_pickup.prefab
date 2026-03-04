@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 6826614735792468009}
   - component: {fileID: 9000569743225555914}
-  - component: {fileID: 4226474243413075490}
   - component: {fileID: 82624494627035490}
   - component: {fileID: -7291357148781799146}
   - component: {fileID: 801893185384919057}
+  - component: {fileID: -4968885755241307779}
   m_Layer: 3
   m_Name: Item_Zanahoria_pickup
   m_TagString: Item
@@ -95,26 +95,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4226474243413075490
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5848084394140079452}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 01ecf8c5aa1778846ae836fd8c60dc01, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Zanahoria
-  itemName: Zanahoria
-  itemTrowAngle: 40
-  itemTrowVelocity: 200
-  itemObject: {fileID: 0}
-  Hitbox: {fileID: 82624494627035490}
-  itemBodyCollision: {fileID: 801893185384919057}
-  itemRigidBody: {fileID: -7291357148781799146}
-  currentState: 0
 --- !u!58 &82624494627035490
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -163,7 +143,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1.5
+  m_Mass: 2
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -224,3 +204,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.0718286, y: 1.6619387}
   m_EdgeRadius: 0
+--- !u!114 &-4968885755241307779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5848084394140079452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01ecf8c5aa1778846ae836fd8c60dc01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Zanahoria
+  itemName: 
+  itemTrowAngle: 50
+  itemTrowVelocity: 15
+  itemObject: {fileID: 0}
+  Hitbox: {fileID: 82624494627035490}
+  itemBodyCollision: {fileID: 801893185384919057}
+  itemRigidBody: {fileID: -7291357148781799146}
+  currentState: 0

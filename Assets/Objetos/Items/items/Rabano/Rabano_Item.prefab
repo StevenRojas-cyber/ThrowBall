@@ -107,7 +107,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 5
+  m_Mass: 3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   itemName: Rabano
   itemTrowAngle: 50
-  itemTrowVelocity: 60
+  itemTrowVelocity: 15
   itemObject: {fileID: 0}
   Hitbox: {fileID: 4356627673122535180}
   itemBodyCollision: {fileID: 4318838239150474699}

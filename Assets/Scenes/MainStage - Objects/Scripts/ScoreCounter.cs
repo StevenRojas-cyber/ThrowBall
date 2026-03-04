@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreCounter : MonoBehaviour
 {
@@ -8,7 +9,10 @@ public class ScoreCounter : MonoBehaviour
 
     public void AddScore()
     {
-       scoreCount += 1f;
-       ScoreText.text = scoreCount.ToString();
+        if (FindAnyObjectByType<ScoreManager>().gameEnded) return;
+
+        scoreCount += 1f;
+        ScoreText.text = scoreCount.ToString();
     }
+
 }

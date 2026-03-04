@@ -13,19 +13,22 @@ TagManager:
   - player name
   - Conejo score
   - Zorro Score
+  - Conejo Field
+  - Zorro Field
+  - Winner Text
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - Item
+  - 'Item '
   - Water
   - UI
   - Player
   - Ground
   - Walls
   - Ball
-  - 
-  - 
+  - Player Field
+  - ItemOnGround
   - 
   - 
   - 

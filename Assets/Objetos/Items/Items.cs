@@ -40,7 +40,7 @@ public class Items : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      
+       
     }
 
     protected virtual void PrintName()
@@ -86,8 +86,16 @@ public class Items : MonoBehaviour
             UserController.GetComponent<Zorro_CharacterController>().pickUpAction.action.Enable();
         }
 
+        if(name == "Ball")
+        {
+            Collider2D itemBody = itemBodyCollision;
+            Collider2D ballCol = collision.GetComponent<Collider2D>();
+            Physics2D.IgnoreCollision(itemBody, ballCol, true);
+        }
+
     }
 
+   
     private void OnTriggerExit2D(Collider2D collision)
     {
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 1
@@ -117,6 +125,14 @@ public class Items : MonoBehaviour
             User = null;
             return;
         }
+
+        if (collision.CompareTag("Balll"))
+        {
+                Collider2D itemBody = itemBodyCollision;
+                Collider2D ballCol = collision.GetComponent<Collider2D>();
+                Physics2D.IgnoreCollision(itemBody, ballCol, false);
+        }
+
     }
 
 
@@ -126,13 +142,12 @@ public class Items : MonoBehaviour
         {
             if (currentState == ItemState.Throwed)
             {
+                
                 StartCoroutine(DespawnItem());
             }
-            else
-            {
-                currentState = ItemState.OnGround;
-            }
+            
         }
+
     }
 
 
@@ -147,8 +162,7 @@ public class Items : MonoBehaviour
         return playerInside;
     }
 
-
-
+    
 
     public void PickUp()
     {

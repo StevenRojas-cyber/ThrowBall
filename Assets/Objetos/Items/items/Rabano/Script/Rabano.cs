@@ -6,7 +6,7 @@ public class Rabano : Items
     {
         itemName = "Rabano";
         itemTrowAngle = 50;
-        itemTrowVelocity = 30f;
+        itemTrowVelocity = 15f;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

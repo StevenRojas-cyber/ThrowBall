@@ -41,7 +41,7 @@ public class ItemSpawner : MonoBehaviour
         Vector3 startPos = spawnPos - new Vector3(randomX, emergeHeight, 0);
 
         GameObject newItem = Instantiate(itemToSpawn, startPos, Quaternion.identity);
-
+        
         StartCoroutine(EmergeFromGround(newItem));
     }
 

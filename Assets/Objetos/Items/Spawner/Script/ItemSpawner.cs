@@ -56,7 +56,7 @@ public class ItemSpawner : MonoBehaviour
 
         Vector3 targetPos = item.transform.position + new Vector3(0, emergeHeight, 0);
 
-        while (Vector3.Distance(item.transform.position, targetPos) > 0.01f)
+        while (item != null && Vector3.Distance(item.transform.position, targetPos) > 0.01f)
         {
             item.transform.position = Vector3.MoveTowards(
                 item.transform.position,
@@ -66,6 +66,8 @@ public class ItemSpawner : MonoBehaviour
 
             yield return null;
         }
+
+        if(item == null) yield break;
 
         // Reactivamos físicas
         rb.bodyType = RigidbodyType2D.Dynamic;

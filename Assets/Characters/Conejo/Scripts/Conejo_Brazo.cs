@@ -57,9 +57,6 @@ public class Conejo_Brazo : MonoBehaviour
 
         item.currentState = Items.ItemState.Throwed;
         
-
-
-        print("Trowing item: " + item.name);
         item.transform.SetParent(null);
 
         itemRB.simulated = true;

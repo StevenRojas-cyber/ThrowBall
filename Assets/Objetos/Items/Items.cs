@@ -13,6 +13,8 @@ public class Items : MonoBehaviour
     public BoxCollider2D itemBodyCollision;
     public Rigidbody2D itemRigidBody;
 
+    public ItemSpawner spawner;
+
     GameObject User;
 
     private bool playerInside;
@@ -21,16 +23,18 @@ public class Items : MonoBehaviour
     public enum ItemState
     {
         OnGround,
+        OnHand,
         Throwed
     }
 
     public ItemState currentState = ItemState.OnGround;
 
-
-    private void Awake()
+    public void Collect()
     {
-
+        spawner.NotifyItemCollected(gameObject);
+        //Destroy(gameObject);
     }
+   
 
     void Start()
     {
@@ -173,11 +177,22 @@ public class Items : MonoBehaviour
             UserController.GetComponent<Conejo_CharcterController>().PlayerArm.SetItemInHand(this);
             UserController.GetComponent<Conejo_CharcterController>().PlayerArm.AttachItemHand(this);
 
+            currentState = ItemState.OnHand;
+
+            print("Item State: " + currentState + " picked up by: " + User.name);
+
+            Collect();
         }
         else if(User.name == "Player 2")
         {
             UserController.GetComponent<Zorro_CharacterController>().PlayerArm.SetItemInHand(this);
             UserController.GetComponent<Zorro_CharacterController>().PlayerArm.AttachItemHand(this);
+            
+            currentState = ItemState.OnHand;
+
+            print("Item State: " + currentState + " picked up by: " + User.name);
+            
+            Collect();
         }
         Hitbox.enabled = false;
 

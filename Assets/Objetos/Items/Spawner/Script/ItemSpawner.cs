@@ -1,21 +1,33 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
 {
     [Header("Item Spawner Settings")]
     public GameObject[] itemPrefab;// Prefab del item a spawnear
-    public float spawnInterval = 5f; // Intervalo de tiempo entre cada spawn
+
+    public float minSpawnTime = 2f; // Intervalo de tiempo entre cada spawn
+    public float maxSpawnTime = 5f; // Intervalo de tiempo entre cada spawn
+    public float maxIncrement = 1f; // Incremento máximo para reducir el tiempo de spawn
+
+
     public float emergeHeight = 2f;
     public float emergeSpeed = 2f;
-    public float GroundLenght; 
+    public float GroundLenght;
+    public BoxCollider2D groundCollider; // Collider del suelo para determinar el área de spawn
+
+    
+    private List<GameObject> ItemsOnGround = new List<GameObject>(); // Lista para rastrear los items spawneados
 
     private float timer; // Temporizador para controlar el spawn
+    
+
 
 
     private void Start()
     {
-        InvokeRepeating(nameof(SpawnItem), 1.5f, spawnInterval);
+        SpawnItem();
     }
 
     // Update is called once per frame
@@ -23,29 +35,48 @@ public class ItemSpawner : MonoBehaviour
     {
     }
 
+
     void SpawnItem()
     {
-        if (itemPrefab.Length == 0) return;
         int randomIndex = Random.Range(0, itemPrefab.Length);
-        GameObject itemToSpawn = itemPrefab[randomIndex];
+        GameObject prefab = itemPrefab[randomIndex];
 
-        BoxCollider2D groundCollider = GetComponent<BoxCollider2D>();
-        if (groundCollider == null) return;
-        GroundLenght = groundCollider.size.x;
+        float groundLenght = groundCollider.size.x;
+        float randomX = Random.Range(-groundLenght / 2, groundLenght / 2);
 
-        float randomX = Random.Range(-GroundLenght / 2f, GroundLenght / 2f);
+        Vector3 spawnPos = transform.position + new Vector3(randomX, -emergeHeight, 0);
 
-        Vector3 spawnPos = transform.position;
+        GameObject item = Instantiate(prefab, spawnPos, Quaternion.identity);
+        ItemsOnGround.Add(item);
 
-        // Instanciamos un poco debajo del suelo
-        Vector3 startPos = spawnPos - new Vector3(randomX, emergeHeight, 0);
+        Items itemScript = item.GetComponent<Items>();
+        itemScript.spawner = this;
 
-        GameObject newItem = Instantiate(itemToSpawn, startPos, Quaternion.identity);
-        
-        StartCoroutine(EmergeFromGround(newItem));
+        StartCoroutine(EmergeFromGround(item));
     }
 
-    
+    public void NotifyItemCollected(GameObject item)
+    {
+        ItemsOnGround.Remove(item);
+        if(ItemsOnGround.Count == 0)
+        {
+           StartCoroutine(SpawnDelay());
+        }
+    }
+
+
+    IEnumerator SpawnDelay()
+    {
+        float waitTime = Random.Range(minSpawnTime, maxSpawnTime);
+        yield return new WaitForSeconds(waitTime);
+
+        maxSpawnTime += maxIncrement;
+
+        SpawnItem();
+    }
+
+
+
     IEnumerator EmergeFromGround(GameObject item)
     {
         Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
@@ -73,5 +104,7 @@ public class ItemSpawner : MonoBehaviour
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 1f;
     }
+
+
 
 }

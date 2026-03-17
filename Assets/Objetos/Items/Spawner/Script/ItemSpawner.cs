@@ -75,7 +75,10 @@ public class ItemSpawner : MonoBehaviour
         SpawnItem();
     }
 
-
+    public void ResetSpawnDelay()
+    {
+        maxSpawnTime = 5f;
+    }
 
     IEnumerator EmergeFromGround(GameObject item)
     {

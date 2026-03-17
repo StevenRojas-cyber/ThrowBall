@@ -7,6 +7,8 @@ public class Ball : MonoBehaviour
     public TMP_Text conejoScoreText;
     public TMP_Text zorroScoreText;
     public Rigidbody2D BallBody;
+    public GameObject ConejoField;
+    public GameObject ZorroField;
 
     void SpawnBall()
     {
@@ -18,16 +20,25 @@ public class Ball : MonoBehaviour
     {
         if (conejoScoreText == null || zorroScoreText == null) return;
 
+        if (ConejoField == null || ZorroField == null) return;
+
+        ItemSpawner ConejoSpawner = ConejoField.GetComponent<ItemSpawner>();
+        ItemSpawner ZorroSpawner = ZorroField.GetComponent<ItemSpawner>();
+
         if (collision.gameObject.CompareTag("Conejo Field"))
         {
             zorroScoreText.GetComponent<ScoreCounter>().AddScore();
             SpawnBall();
+
+            ConejoSpawner.ResetSpawnDelay();
         }
 
         if (collision.gameObject.CompareTag("Zorro Field"))
         {
             conejoScoreText.GetComponent<ScoreCounter>().AddScore();
             SpawnBall();
+
+            ZorroSpawner.ResetSpawnDelay();
         }
         
     }
@@ -36,18 +47,26 @@ public class Ball : MonoBehaviour
     {
         if (conejoScoreText == null || zorroScoreText == null) return;
 
+        if (ConejoField == null || ZorroField == null) return;
+
+        ItemSpawner ConejoSpawner = ConejoField.GetComponent<ItemSpawner>();
+        ItemSpawner ZorroSpawner = ZorroField.GetComponent<ItemSpawner>();
+
         if (collision.gameObject.CompareTag("Conejo_Player"))
         {
             zorroScoreText.GetComponent<ScoreCounter>().AddScore();
             SpawnBall();
+            ConejoSpawner.ResetSpawnDelay();
         }
 
         if (collision.gameObject.CompareTag("Zorro_Player"))
         {
             conejoScoreText.GetComponent<ScoreCounter>().AddScore();
             SpawnBall();
+            ZorroSpawner.ResetSpawnDelay();
         }
     }
 
+   
 }
 

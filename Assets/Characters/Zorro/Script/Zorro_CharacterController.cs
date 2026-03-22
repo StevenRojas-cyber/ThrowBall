@@ -7,6 +7,7 @@ public class Zorro_CharacterController : MonoBehaviour
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;
+    public Animator ZorroAnimator;
 
     public Zorro_Brazo PlayerArm;
 
@@ -28,6 +29,8 @@ public class Zorro_CharacterController : MonoBehaviour
     void Update()
     {
         move = moveAction.action.ReadValue<Vector2>();
+
+        ZorroAnimator.SetFloat("movement", Mathf.Abs(move.x));
 
         if (move.x > 0)
         {

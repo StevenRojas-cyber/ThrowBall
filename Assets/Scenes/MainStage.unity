@@ -2118,6 +2118,7 @@ GameObject:
   - component: {fileID: 1435353368}
   - component: {fileID: 1435353367}
   - component: {fileID: 1435353371}
+  - component: {fileID: 1435353372}
   m_Layer: 6
   m_Name: Player 2
   m_TagString: Zorro_Player
@@ -2247,7 +2248,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7466906725618831524, guid: 4eb520b049439594fa79505dbf1c615c, type: 3}
+  m_Sprite: {fileID: 8793639957104055765, guid: 6447d42b0ae01bf4a8a9add2f923a361, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -2266,8 +2267,8 @@ Transform:
   m_GameObject: {fileID: 1435353366}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.8, y: -5.83, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 10.7596, y: -5.7679, z: 0}
+  m_LocalScale: {x: 0.9817, y: 0.9817, z: 0.9817}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1555190493}
@@ -2289,8 +2290,31 @@ MonoBehaviour:
   moveAction: {fileID: 3762077382282410050, guid: c7030c85d1de3804fa529fb39d236abd, type: 3}
   pickUpAction: {fileID: 7452934904994990023, guid: c7030c85d1de3804fa529fb39d236abd, type: 3}
   trowAction: {fileID: 3895309467214480933, guid: c7030c85d1de3804fa529fb39d236abd, type: 3}
+  ZorroAnimator: {fileID: 1435353372}
   PlayerArm: {fileID: 1555190491}
   enabledPickUp: 0
+--- !u!95 &1435353372
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1435353366}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f474a5b128b796b478abb48e4b66a362, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1555190490
 GameObject:
   m_ObjectHideFlags: 0
@@ -3212,8 +3236,8 @@ Transform:
   m_GameObject: {fileID: 2062187086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.99, y: -5.39, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.43040514}
+  m_LocalPosition: {x: -10.0963, y: -5.2096, z: 0}
+  m_LocalScale: {x: 0.9562, y: 0.9562, z: 0.41155338}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1272809241}
@@ -3310,6 +3334,7 @@ MonoBehaviour:
   pickUpAction: {fileID: 8975809484785049918, guid: 8956b02dba360c54b92fcd7497de6c16, type: 3}
   trowAction: {fileID: -6517206053452248404, guid: 8956b02dba360c54b92fcd7497de6c16, type: 3}
   PlayerArm: {fileID: 1272809242}
+  ConejoAnimator: {fileID: 2062187095}
 --- !u!114 &2062187094
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ public class Conejo_CharcterController : MonoBehaviour
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;
     public Conejo_Brazo PlayerArm;
+    public Animator ConejoAnimator;
 
     private Vector2 moveDirection;
     private Items currentItemGround;
@@ -34,9 +35,12 @@ public class Conejo_CharcterController : MonoBehaviour
         //Sistema de Movimiento
         moveDirection = moveAction.action.ReadValue<Vector2>();
 
+        ConejoAnimator.SetFloat("movement", Mathf.Abs(moveDirection.x));
+
         if (moveDirection.x > 0)
         {
             transform.localScale = new Vector3(1, 1, 1);
+
         }
         else if (moveDirection.x < 0)
         {
@@ -69,6 +73,7 @@ public class Conejo_CharcterController : MonoBehaviour
     private void FixedUpdate()
     {
         CharacterBody2D.linearVelocity = new Vector2(moveDirection.x * speed, -CharacterBody2D.gravityScale);
+        
         CharacterBody2D.SetRotation(0);
     }
 

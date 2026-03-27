@@ -59,15 +59,22 @@ public class Conejo_CharcterController : MonoBehaviour
 
         if(trowAction.action.WasPressedThisFrame())
         {
-            if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
-            {
-                PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);
-                
-            }
+
+            ConejoAnimator.SetBool("IsThrowing", true);
         }
 
 
        
+    }
+
+    public void ThrowItemAction()
+    {
+        if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
+        {
+            PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);
+
+        }
+            ConejoAnimator.SetBool("IsThrowing", false);
     }
 
     private void FixedUpdate()

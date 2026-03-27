@@ -54,13 +54,18 @@ public class Zorro_CharacterController : MonoBehaviour
 
         if (trowAction.action.WasPressedThisFrame())
         {
-            if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
-            {
-                PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);
-               
-            }
+          ZorroAnimator.SetBool("IsThrowing", true);
         }
 
+    }
+
+    public void ThrowItemAction()
+    {
+        if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
+        {
+            PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);
+        }
+        ZorroAnimator.SetBool("IsThrowing", false);
     }
 
     void FixedUpdate()

@@ -24,18 +24,26 @@ public class Ball : MonoBehaviour
 
         ItemSpawner ConejoSpawner = ConejoField.GetComponent<ItemSpawner>();
         ItemSpawner ZorroSpawner = ZorroField.GetComponent<ItemSpawner>();
+        
 
         if (collision.gameObject.CompareTag("Conejo Field"))
         {
             zorroScoreText.GetComponent<ScoreCounter>().AddScore();
+
+
             SpawnBall();
 
             ConejoSpawner.ResetSpawnDelay();
         }
 
+
+
         if (collision.gameObject.CompareTag("Zorro Field"))
         {
             conejoScoreText.GetComponent<ScoreCounter>().AddScore();
+
+
+
             SpawnBall();
 
             ZorroSpawner.ResetSpawnDelay();

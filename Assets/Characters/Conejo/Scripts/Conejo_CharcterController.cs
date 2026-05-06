@@ -7,8 +7,12 @@ public class Conejo_CharcterController : MonoBehaviour
 {
     public bool enabledPickUp = false; 
     public float speed = 5.0f;
-    
-    
+    public enum PlayerState
+    {
+        Movement,
+        ScoreEvent,
+    }
+
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;
@@ -32,6 +36,20 @@ public class Conejo_CharcterController : MonoBehaviour
 
     void Update()
     {
+       
+        Movement();
+
+
+    }
+
+    public void Celebration(bool ImScored)
+    {
+        
+    }
+
+
+    public void Movement()
+    {
         //Sistema de Movimiento
         moveDirection = moveAction.action.ReadValue<Vector2>();
 
@@ -44,7 +62,7 @@ public class Conejo_CharcterController : MonoBehaviour
         }
         else if (moveDirection.x < 0)
         {
-            transform.localScale = new Vector3(-1, 1,1);
+            transform.localScale = new Vector3(-1, 1, 1);
         }
 
         if (pickUpAction.action.WasPressedThisFrame())
@@ -57,15 +75,13 @@ public class Conejo_CharcterController : MonoBehaviour
             }
         }
 
-        if(trowAction.action.WasPressedThisFrame())
+        if (trowAction.action.WasPressedThisFrame())
         {
 
             ConejoAnimator.SetBool("IsThrowing", true);
         }
-
-
-       
     }
+
 
     public void ThrowItemAction()
     {

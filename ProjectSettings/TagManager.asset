@@ -16,6 +16,7 @@ TagManager:
   - Conejo Field
   - Zorro Field
   - Winner Text
+  - PauseMenu
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,8 @@ using UnityEngine.InputSystem;
 public class Zorro_CharacterController : MonoBehaviour
 {
     public float speed = 5f;
+    public bool enabledPickUp = false;
+    
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;
@@ -11,12 +13,17 @@ public class Zorro_CharacterController : MonoBehaviour
 
     public Zorro_Brazo PlayerArm;
 
+    public enum PlayerState
+    {
+        Movement,
+        ScoreEvent,
+    }
+
+
     private Rigidbody2D rb;
     private Vector2 move;
-
     private Items currentItemGround;
-    public bool enabledPickUp = false;
-  
+    
 
     void Start()
     {
@@ -27,6 +34,18 @@ public class Zorro_CharacterController : MonoBehaviour
     }
 
     void Update()
+    {
+        MovementState();
+    }
+
+    public void Celebration(bool ImScored)
+    { 
+        
+    
+    }
+
+
+    public void MovementState()
     {
         move = moveAction.action.ReadValue<Vector2>();
 
@@ -54,10 +73,10 @@ public class Zorro_CharacterController : MonoBehaviour
 
         if (trowAction.action.WasPressedThisFrame())
         {
-          ZorroAnimator.SetBool("IsThrowing", true);
+            ZorroAnimator.SetBool("IsThrowing", true);
         }
-
     }
+
 
     public void ThrowItemAction()
     {

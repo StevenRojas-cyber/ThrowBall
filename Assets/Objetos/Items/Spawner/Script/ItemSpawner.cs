@@ -7,11 +7,12 @@ public class ItemSpawner : MonoBehaviour
     [Header("Item Spawner Settings")]
     public GameObject[] itemPrefab;// Prefab del item a spawnear
 
+    [Header("Spawn Timing Settings")]
     public float minSpawnTime = 2f; // Intervalo de tiempo entre cada spawn
     public float maxSpawnTime = 5f; // Intervalo de tiempo entre cada spawn
     public float maxIncrement = 1f; // Incremento máximo para reducir el tiempo de spawn
 
-
+    [Header("Emerge Animation Settings")]
     public float emergeHeight = 2f;
     public float emergeSpeed = 2f;
     public float GroundLenght;

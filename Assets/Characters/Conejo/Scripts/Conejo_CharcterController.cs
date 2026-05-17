@@ -110,6 +110,7 @@ public class Conejo_CharcterController : MonoBehaviour
         //Sistema de Recoger Objetos
         if (pickUpAction.action.WasPressedThisFrame())
         {
+            if (PlayerArm == null) return;
             if (currentItemGround != null && PlayerArm.IsHandEmpty())
             {
                 currentItemGround.PickUp();
@@ -119,7 +120,7 @@ public class Conejo_CharcterController : MonoBehaviour
 
         if (trowAction.action.WasPressedThisFrame())
         {
-
+            if (PlayerArm == null) return;
             ConejoAnimator.SetBool("IsThrowing", true);
         }
     }
@@ -136,7 +137,7 @@ public class Conejo_CharcterController : MonoBehaviour
 
     public void ThrowItemAction()
     {
-        if(PlayerArm == null) return;
+        
 
         if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
         {

@@ -8,13 +8,18 @@ public class Zorro_CharacterController : MonoBehaviour
     public bool isGameEnded = false;
     public bool enabledPickUp = false;
     
-    public ParticleSystem Dust;
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;
     public Animator ZorroAnimator;
 
     public Zorro_Brazo PlayerArm;
+
+
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem Dust;
+
+    private ParticleSystem.EmissionModule DustEmission;
 
     public enum PlayerState
     {
@@ -34,11 +39,13 @@ public class Zorro_CharacterController : MonoBehaviour
         moveAction.action.Enable();
         pickUpAction.action.Disable();
         trowAction.action.Disable();
+        DustEmission = Dust.emission;
     }
 
     void Update()
     {
         MovementState();
+        CreateDust();
     }
 
     public void Celebration(bool ImScored)
@@ -81,24 +88,23 @@ public class Zorro_CharacterController : MonoBehaviour
 
         ZorroAnimator.SetFloat("movement", Mathf.Abs(move.x));
 
-        if(move.x == 0) Dust.Stop();
-
         if (move.x > 0)
         {
-            CreateDust();
-
+            
             transform.localScale = new Vector3(1, 1, 1);
+            
         }
         else if (move.x < 0)
         {
-            CreateDust();
+
             transform.localScale = new Vector3(-1, 1, 1);
+           
         }
 
 
         if (pickUpAction.action.WasPressedThisFrame())
         {
-
+            if (PlayerArm == null) return;
             if (currentItemGround != null && PlayerArm.IsHandEmpty())
             {
                 currentItemGround.PickUp();
@@ -108,17 +114,25 @@ public class Zorro_CharacterController : MonoBehaviour
 
         if (trowAction.action.WasPressedThisFrame())
         {
+            if (PlayerArm == null) return;
             ZorroAnimator.SetBool("IsThrowing", true);
         }
     }
 
     void CreateDust()
     {
-        Dust.Play();
+        if (move.x != 0)
+        { 
+            DustEmission.rateOverTime = 3f;
+        }
+        else DustEmission.rateOverTime = 0f;
+        
     }   
 
     public void ThrowItemAction()
     {
+       
+
         if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
         {
             PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);

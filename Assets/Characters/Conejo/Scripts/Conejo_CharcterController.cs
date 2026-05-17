@@ -15,16 +15,19 @@ public class Conejo_CharcterController : MonoBehaviour
         ScoreEvent,
     }
 
-    public ParticleSystem Dust;
+    [Header("Components")]
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;
     public Conejo_Brazo PlayerArm;
     public Animator ConejoAnimator;
 
+    [Header("Particles")]
+    [SerializeField] private ParticleSystem Dust;
 
     private Vector2 moveDirection;
     private Items currentItemGround;
+    private ParticleSystem.EmissionModule DustEmission;
 
     Rigidbody2D CharacterBody2D;
     Transform characterTransform;
@@ -34,7 +37,8 @@ public class Conejo_CharcterController : MonoBehaviour
     {
         CharacterBody2D = GetComponent<Rigidbody2D>();
         characterTransform = GetComponent<Transform>();
-        
+        DustEmission = Dust.emission;
+
         moveAction.action.Enable();
         pickUpAction.action.Disable();
         trowAction.action.Disable();
@@ -43,6 +47,7 @@ public class Conejo_CharcterController : MonoBehaviour
     void Update()
     {       
        Movement();
+       CreateDust();
     }
 
     public void Celebration(bool ImScored)
@@ -86,19 +91,18 @@ public class Conejo_CharcterController : MonoBehaviour
         moveDirection = moveAction.action.ReadValue<Vector2>();
 
         ConejoAnimator.SetFloat("movement", Mathf.Abs(moveDirection.x));
-
-       if(moveDirection.x == 0) Dust.Stop();
+        
 
         //Girar el personaje segun la direccion del movimiento
         if (moveDirection.x > 0)
         {
-            CreateDust();
+         
             transform.localScale = new Vector3(1, 1, 1);
 
         }
         else if (moveDirection.x < 0)
         {
-        CreateDust();
+        
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
@@ -122,11 +126,18 @@ public class Conejo_CharcterController : MonoBehaviour
 
     void CreateDust()
     {
-        Dust.Play();
+        if(moveDirection.x != 0)
+        {
+            DustEmission.rateOverTime = 3;
+        }
+        else DustEmission.rateOverTime = 0;
+
     }
 
     public void ThrowItemAction()
     {
+        if(PlayerArm == null) return;
+
         if (PlayerArm.CurrentItemInHand != null && PlayerArm.IsHandEmpty() == false)
         {
             PlayerArm.TrowItem(PlayerArm.CurrentItemInHand);

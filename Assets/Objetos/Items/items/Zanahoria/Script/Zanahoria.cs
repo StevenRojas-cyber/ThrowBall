@@ -5,8 +5,10 @@ public class Zanahoria : Items
 {
     void Awake()
     {
-        itemTrowAngle = 50f;
-        itemTrowVelocity = 15f;
+        itemName = itemData.itemName;
+        itemTrowAngle = itemData.itemTrowAngle;
+        itemTrowVelocity = itemData.itemTrowVelocity;
+        itemDespawnTime = itemData.itemDespawnTime;
     }
 
     private void Start()

@@ -4,9 +4,10 @@ public class Rabano : Items
 {
     private void Awake()
     {
-        itemName = "Rabano";
-        itemTrowAngle = 50;
-        itemTrowVelocity = 15f;
+        itemName = itemData.itemName;
+        itemTrowAngle = itemData.itemTrowAngle;
+        itemTrowVelocity = itemData.itemTrowVelocity;
+        itemDespawnTime = itemData.itemDespawnTime;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

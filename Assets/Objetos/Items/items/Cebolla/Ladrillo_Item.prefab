@@ -137,10 +137,13 @@ MonoBehaviour:
   itemName: 
   itemTrowAngle: 45
   itemTrowVelocity: 30
+  itemDespawnTime: 1
+  itemData: {fileID: 11400000, guid: 7e93597aea872a242993a67c2db26d94, type: 2}
   itemObject: {fileID: 0}
   Hitbox: {fileID: 7334621030430352534}
   itemBodyCollision: {fileID: -607412141808437228}
   itemRigidBody: {fileID: -7899361228055144367}
+  spawner: {fileID: 0}
   currentState: 0
 --- !u!58 &7334621030430352534
 CircleCollider2D:

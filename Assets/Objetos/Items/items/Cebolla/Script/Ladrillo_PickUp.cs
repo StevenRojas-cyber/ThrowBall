@@ -5,9 +5,10 @@ public class Ladrillo_PickUp : Items
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Awake()
     {
-        itemName = "Ladrillo";
-        itemTrowAngle = 45f;
-        itemTrowVelocity = 15.5f;
+        itemName = itemData.itemName;
+        itemTrowAngle = itemData.itemTrowAngle;
+        itemTrowVelocity = itemData.itemTrowVelocity;
+        itemDespawnTime = itemData.itemDespawnTime; ;
     }
     
     void Start()

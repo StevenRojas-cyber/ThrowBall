@@ -1,11 +1,14 @@
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class Zorro_CharacterController : MonoBehaviour
 {
     public float speed = 5f;
+    public bool isGameEnded = false;
     public bool enabledPickUp = false;
     
+    public ParticleSystem Dust;
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;
@@ -39,9 +42,36 @@ public class Zorro_CharacterController : MonoBehaviour
     }
 
     public void Celebration(bool ImScored)
-    { 
-        
-    
+    {
+        ZorroAnimator.SetTrigger("AnyoneScored");
+
+        moveAction.action.Disable();
+
+        if (ImScored)
+        {
+            ZorroAnimator.SetBool("GotScore", true);
+            ZorroAnimator.SetBool("EnemyScore", false);
+            PlayerArm.gameObject.SetActive(false);
+        }
+        else
+        {
+            ZorroAnimator.SetBool("GotScore", false);
+            ZorroAnimator.SetBool("EnemyScore", true);
+            PlayerArm.gameObject.SetActive(false);
+        }
+
+    }
+
+
+    public void StopCelebration()
+    {
+        if (isGameEnded) return;
+        moveAction.action.Enable();
+
+        ZorroAnimator.ResetTrigger("AnyoneScored");
+        ZorroAnimator.SetBool("GotScore", false);
+        ZorroAnimator.SetBool("EnemyScore", false);
+        PlayerArm.gameObject.SetActive(true);
     }
 
 
@@ -51,12 +81,17 @@ public class Zorro_CharacterController : MonoBehaviour
 
         ZorroAnimator.SetFloat("movement", Mathf.Abs(move.x));
 
+        if(move.x == 0) Dust.Stop();
+
         if (move.x > 0)
         {
+            CreateDust();
+
             transform.localScale = new Vector3(1, 1, 1);
         }
         else if (move.x < 0)
         {
+            CreateDust();
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
@@ -77,6 +112,10 @@ public class Zorro_CharacterController : MonoBehaviour
         }
     }
 
+    void CreateDust()
+    {
+        Dust.Play();
+    }   
 
     public void ThrowItemAction()
     {

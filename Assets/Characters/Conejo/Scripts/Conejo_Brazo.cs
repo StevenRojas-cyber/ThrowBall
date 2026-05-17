@@ -93,6 +93,8 @@ public class Conejo_Brazo : MonoBehaviour
     private IEnumerator ReenableCollision(Collider2D itemCol, Collider2D playerCol, float Delay)
     {
         yield return new WaitForSeconds(Delay);
+
+        if (itemCol == null) yield break;
         Physics2D.IgnoreCollision(itemCol, playerCol, false);
     }
 

@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class Items : MonoBehaviour
 {
-    public string itemName;
-    public float itemTrowAngle;
-    public float itemTrowVelocity;
+
+    [Header("Item Settings")]
+     public string itemName;
+     public float itemTrowAngle;
+     public float itemTrowVelocity;
+     public float itemDespawnTime;
+
+    public ItemData itemData;
 
     public GameObject itemObject;
     public CircleCollider2D Hitbox;
@@ -27,18 +32,24 @@ public class Items : MonoBehaviour
         Throwed
     }
 
-    public ItemState currentState = ItemState.OnGround;
 
+    public ItemState currentState = ItemState.OnGround;
+    
     public void Collect()
     {
         spawner.NotifyItemCollected(gameObject);
         //Destroy(gameObject);
     }
-   
 
     void Start()
     {
-        PrintName();
+        if (itemData != null)
+        {
+            itemName = itemData.itemName;
+            itemTrowAngle = itemData.itemTrowAngle;
+            itemTrowVelocity = itemData.itemTrowVelocity;
+            itemDespawnTime = itemData.itemDespawnTime;
+        }
     }
 
     // Update is called once per frame
@@ -63,26 +74,33 @@ public class Items : MonoBehaviour
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 1
         if (name == "Player 1")
         {
+            //Ignorar colision entre el item y el jugador para evitar problemas al recogerlo
             Collider2D itemBody = itemBodyCollision;
             Collider2D playerCol = collision.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(itemBody, playerCol, true);
 
+
+            //Asignar el jugador que entro en el hitbox del item a la variable User y obtener su controlador para habilitar la accion de recoger el item
             User = collision.gameObject;
             UserController = collision.gameObject.GetComponent<Conejo_CharcterController>();
             if (UserController == null) return;
 
             playerInside = true;
             UserController.GetComponent<Conejo_CharcterController>().pickUpAction.action.Enable();
+        
         }
 
 
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 2
         if (name == "Player 2")
         {
+            //Ignorar colision entre el item y el jugador para evitar problemas al recogerlo
             Collider2D itemBody = itemBodyCollision;
             Collider2D playerCol = collision.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(itemBody, playerCol, true);
 
+
+            //Asignar el jugador que entro en el hitbox del item a la variable User y obtener su controlador para habilitar la accion de recoger el item
             User = collision.gameObject;
             UserController = collision.gameObject.GetComponent<Zorro_CharacterController>();
             if (UserController == null) return;
@@ -92,6 +110,7 @@ public class Items : MonoBehaviour
 
         if(name == "Ball")
         {
+            //
             Collider2D itemBody = itemBodyCollision;
             Collider2D ballCol = collision.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(itemBody, ballCol, true);
@@ -105,10 +124,13 @@ public class Items : MonoBehaviour
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 1
         if (collision.CompareTag("Conejo_Player"))
         {
+            //Dejar de ignorar colision entre el item y el jugador para evitar problemas al recogerlo
             Collider2D itemBody = itemBodyCollision;
             Collider2D playerCol = collision.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(itemBody, playerCol, false);
 
+
+            //Desasignar el jugador que salio del hitbox del item de la variable User y deshabilitar la accion de recoger el item
             playerInside = false;
             UserController.GetComponent<Conejo_CharcterController>().pickUpAction.action.Disable();
             UserController = null;
@@ -119,10 +141,13 @@ public class Items : MonoBehaviour
         //En Caso de que el jugador que entre en el hitbox del item sea el Player 2
         if (collision.CompareTag("Zorro_Player"))
         {
+            //Dejar de ignorar colision entre el item y el jugador para evitar problemas al recogerlo
             Collider2D itemBody = itemBodyCollision;
             Collider2D playerCol = collision.GetComponent<Collider2D>();
             Physics2D.IgnoreCollision(itemBody, playerCol, false);
 
+
+            //Desasignar el jugador que salio del hitbox del item de la variable User y deshabilitar la accion de recoger el item
             playerInside = false;
             UserController.GetComponent<Zorro_CharacterController>().pickUpAction.action.Disable();
             UserController = null;
@@ -157,7 +182,7 @@ public class Items : MonoBehaviour
 
     private IEnumerator DespawnItem()
     {
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(itemDespawnTime);
         Destroy(this.gameObject);
     }
 
@@ -170,7 +195,7 @@ public class Items : MonoBehaviour
 
     public void PickUp()
     {
-        //Debug.Log("Picked up: " + itemName);
+        Debug.Log("Picked up: " + itemName);
 
         if(User.name == "Player 1")
         {
@@ -179,8 +204,10 @@ public class Items : MonoBehaviour
 
             currentState = ItemState.OnHand;
 
-            print("Item State: " + currentState + " picked up by: " + User.name);
+            //print("Item State: " + currentState + " picked up by: " + User.name);
 
+
+            //Reportar al spawner que el item ha sido recogido para eliminarlo de la lista de items en el suelo y evitar problemas con el spawn
             Collect();
         }
         else if(User.name == "Player 2")
@@ -190,8 +217,9 @@ public class Items : MonoBehaviour
             
             currentState = ItemState.OnHand;
 
-            print("Item State: " + currentState + " picked up by: " + User.name);
-            
+            //print("Item State: " + currentState + " picked up by: " + User.name);
+
+            //Reportar al spawner que el item ha sido recogido para eliminarlo de la lista de items en el suelo y evitar problemas con el spawn
             Collect();
         }
         Hitbox.enabled = false;

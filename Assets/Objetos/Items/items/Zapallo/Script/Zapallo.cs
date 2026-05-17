@@ -4,9 +4,10 @@ public class Zapallo : Items
 {
     private void Awake()
     {
-        itemTrowAngle = 65f;
-        itemTrowVelocity = 20f;
-        //itemRigidBody.mass = 20f;
+        itemName = itemData.itemName;
+        itemTrowAngle = itemData.itemTrowAngle;
+        itemTrowVelocity = itemData.itemTrowVelocity;
+        itemDespawnTime = itemData.itemDespawnTime;
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

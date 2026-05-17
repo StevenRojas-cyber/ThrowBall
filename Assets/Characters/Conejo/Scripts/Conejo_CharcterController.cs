@@ -1,10 +1,12 @@
 ﻿using System.Net;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 
 public class Conejo_CharcterController : MonoBehaviour
 {
+    public bool GameEnded = false;
     public bool enabledPickUp = false; 
     public float speed = 5.0f;
     public enum PlayerState
@@ -13,11 +15,13 @@ public class Conejo_CharcterController : MonoBehaviour
         ScoreEvent,
     }
 
+    public ParticleSystem Dust;
     public InputActionReference moveAction;
     public InputActionReference pickUpAction;
     public InputActionReference trowAction;
     public Conejo_Brazo PlayerArm;
     public Animator ConejoAnimator;
+
 
     private Vector2 moveDirection;
     private Items currentItemGround;
@@ -29,22 +33,50 @@ public class Conejo_CharcterController : MonoBehaviour
     void Start()
     {
         CharacterBody2D = GetComponent<Rigidbody2D>();
+        characterTransform = GetComponent<Transform>();
+        
+        moveAction.action.Enable();
         pickUpAction.action.Disable();
         trowAction.action.Disable();
-        characterTransform = GetComponent<Transform>();
     }
 
     void Update()
-    {
-       
-        Movement();
-
-
+    {       
+       Movement();
     }
 
     public void Celebration(bool ImScored)
     {
+        ConejoAnimator.SetTrigger("AnyoneScore");
+
+        moveAction.action.Disable();
+
+        if (ImScored)
+        {
+            ConejoAnimator.SetBool("GotScore", true);
+            ConejoAnimator.SetBool("EnemyScore", false);
+            PlayerArm.gameObject.SetActive(false);
+        }
+        else
+        {
+            ConejoAnimator.SetBool("GotScore", false);
+            ConejoAnimator.SetBool("EnemyScore", true);
+            PlayerArm.gameObject.SetActive(false);
+        }
         
+    }
+
+
+    public void StopCelebration()
+    {
+        if (GameEnded) return;
+
+        moveAction.action.Enable();
+
+        ConejoAnimator.ResetTrigger("AnyoneScore");
+        ConejoAnimator.SetBool("GotScore", false);
+        ConejoAnimator.SetBool("EnemyScore", false);
+        PlayerArm.gameObject.SetActive(true);
     }
 
 
@@ -55,19 +87,25 @@ public class Conejo_CharcterController : MonoBehaviour
 
         ConejoAnimator.SetFloat("movement", Mathf.Abs(moveDirection.x));
 
+       if(moveDirection.x == 0) Dust.Stop();
+
+        //Girar el personaje segun la direccion del movimiento
         if (moveDirection.x > 0)
         {
+            CreateDust();
             transform.localScale = new Vector3(1, 1, 1);
 
         }
         else if (moveDirection.x < 0)
         {
+        CreateDust();
             transform.localScale = new Vector3(-1, 1, 1);
         }
 
+
+        //Sistema de Recoger Objetos
         if (pickUpAction.action.WasPressedThisFrame())
         {
-
             if (currentItemGround != null && PlayerArm.IsHandEmpty())
             {
                 currentItemGround.PickUp();
@@ -82,6 +120,10 @@ public class Conejo_CharcterController : MonoBehaviour
         }
     }
 
+    void CreateDust()
+    {
+        Dust.Play();
+    }
 
     public void ThrowItemAction()
     {
@@ -92,6 +134,7 @@ public class Conejo_CharcterController : MonoBehaviour
         }
             ConejoAnimator.SetBool("IsThrowing", false);
     }
+  
 
     private void FixedUpdate()
     {

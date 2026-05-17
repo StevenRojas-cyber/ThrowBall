@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b353e59d97cafe948a399ebf564f00fa
+guid: 6e036db89559abb41a6f8b42c1837220
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -374937994769476153
-    second: conejo_victoria_0
+      213: 5378860254741419952
+    second: ZORRO_gana_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: conejo_victoria_0
+      name: ZORRO_gana_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1037
-        height: 1775
+        width: 990
+        height: 1395
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7c5d7f851e3fbcaf0800000000000000
-      internalID: -374937994769476153
+      spriteID: 0b7545c37ec85aa40800000000000000
+      internalID: 5378860254741419952
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      conejo_victoria_0: -374937994769476153
+      ZORRO_gana_0: 5378860254741419952
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

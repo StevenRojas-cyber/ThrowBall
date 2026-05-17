@@ -219,8 +219,11 @@ MonoBehaviour:
   itemName: Rabano
   itemTrowAngle: 50
   itemTrowVelocity: 15
+  itemDespawnTime: 1
+  itemData: {fileID: 11400000, guid: 24deb9216f48d024faa575ef8cac7d18, type: 2}
   itemObject: {fileID: 0}
   Hitbox: {fileID: 4356627673122535180}
   itemBodyCollision: {fileID: 4318838239150474699}
   itemRigidBody: {fileID: 2621898412195570042}
+  spawner: {fileID: 0}
   currentState: 0

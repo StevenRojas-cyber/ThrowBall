@@ -7,6 +7,10 @@ public class ScoreManager : MonoBehaviour
     public TMP_Text zorroScore;
     public TMP_Text WinnerText;
 
+    public GameObject ConejoPlayer;
+    public GameObject ZorroPlayer;
+    public GameObject Ball;
+
     private ScoreCounter conejoScoreCount;
     private ScoreCounter zorroScoreCount;
 
@@ -20,6 +24,7 @@ public class ScoreManager : MonoBehaviour
 
         if (WinnerText == null) return;
         WinnerText.gameObject.SetActive(false);
+
     }
 
 
@@ -48,7 +53,11 @@ public class ScoreManager : MonoBehaviour
 
         WinnerText.gameObject.SetActive(true);
 
-        Time.timeScale = 0f;
+        ConejoPlayer.GetComponent<Conejo_CharcterController>().GameEnded = true;
+        ZorroPlayer.GetComponent<Zorro_CharacterController>().isGameEnded = true;
+        
+        Ball.GetComponent<Ball>().isGameEnded = true;
+
     }
 
 }

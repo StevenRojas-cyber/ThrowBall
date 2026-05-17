@@ -219,8 +219,11 @@ MonoBehaviour:
   itemName: Zapallo
   itemTrowAngle: 65
   itemTrowVelocity: 20
+  itemDespawnTime: 1
+  itemData: {fileID: 11400000, guid: a8dcb7b9a910cb144a987bc62c8ce72a, type: 2}
   itemObject: {fileID: 0}
   Hitbox: {fileID: 4336852292566186275}
   itemBodyCollision: {fileID: 7606335242954317293}
   itemRigidBody: {fileID: 7735595295912407289}
+  spawner: {fileID: 0}
   currentState: 0

@@ -80,16 +80,28 @@ public class ItemSpawner : MonoBehaviour
         maxSpawnTime = 5f;
     }
 
+
+    //Animación de aparición del item emergiendo del suelo
     IEnumerator EmergeFromGround(GameObject item)
     {
+        // Obtenemos componentes necesarios
         Rigidbody2D rb = item.GetComponent<Rigidbody2D>();
+        CircleCollider2D PickUpTrigger = item.GetComponent<CircleCollider2D>();
+        BoxCollider2D bodyCollider = item.GetComponent<BoxCollider2D>();
+
 
         // Desactivamos físicas mientras emerge
         rb.bodyType = RigidbodyType2D.Kinematic;
         rb.gravityScale = 0;
+        PickUpTrigger.enabled = false;
+        bodyCollider.enabled = false;
 
+
+        // Calculamos posición objetivo
         Vector3 targetPos = item.transform.position + new Vector3(0, emergeHeight, 0);
 
+
+        // Movemos el item hacia arriba hasta alcanzar la posición objetivo
         while (item != null && Vector3.Distance(item.transform.position, targetPos) > 0.01f)
         {
             item.transform.position = Vector3.MoveTowards(
@@ -103,9 +115,13 @@ public class ItemSpawner : MonoBehaviour
 
         if(item == null) yield break;
 
+
+
         // Reactivamos físicas
         rb.bodyType = RigidbodyType2D.Dynamic;
         rb.gravityScale = 1f;
+        PickUpTrigger.enabled = true;
+        bodyCollider.enabled = true;
     }
 
 

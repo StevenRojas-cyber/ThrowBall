@@ -49,6 +49,7 @@ public class ScoreManager : MonoBehaviour
     {
         gameEnded = true;
 
+
         WinnerText.text = winnerText + " Gana!";
 
         WinnerText.gameObject.SetActive(true);

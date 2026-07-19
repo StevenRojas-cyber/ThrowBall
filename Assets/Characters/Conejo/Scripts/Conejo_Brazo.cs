@@ -104,7 +104,7 @@ public class Conejo_Brazo : MonoBehaviour
         return CurrentHandState == HandState.Empty;
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
         

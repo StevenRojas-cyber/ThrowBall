@@ -17,11 +17,11 @@ public class PauseMenu : MonoBehaviour
     {
         if (ScoreManager == null) return;
             
-        scoreManagerScript = ScoreManager.GetComponent<ScoreManager>();
+        //scoreManagerScript = ScoreManager.GetComponent<ScoreManager>();
 
         pauseMenuUI.SetActive(false);
       
-        pauseAction.action.Enable();
+        //pauseAction.action.Enable();
 
     }
 

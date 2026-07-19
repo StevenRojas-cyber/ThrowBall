@@ -1,15 +1,15 @@
 {
     "version": 1,
-    "name": "PauseInput",
+    "name": "TutorialAction",
     "maps": [
         {
-            "name": "PauseGame",
-            "id": "36bbc63e-9575-4b93-8931-9e4082f0c190",
+            "name": "QuitTutorial",
+            "id": "1dc1d04c-9ee3-448a-beb5-f9433f4a9b15",
             "actions": [
                 {
-                    "name": "PauseButton",
+                    "name": "QuitTutorial",
                     "type": "Button",
-                    "id": "a13b011b-87d6-4710-9ad1-c523ff877a5a",
+                    "id": "5ee5f75c-7b15-468a-8a67-f2231e579544",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -19,12 +19,12 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "9c4c7b2e-61f4-4332-aafe-44b0844178e2",
-                    "path": "<Keyboard>/escape",
+                    "id": "67cb8c62-43ac-48dc-8ded-7148409b4b32",
+                    "path": "<Keyboard>/enter",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PauseButton",
+                    "action": "QuitTutorial",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

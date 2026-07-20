@@ -16,12 +16,13 @@ public class TutorialManager : MonoBehaviour
 
         if(TutorialAction == null) return;
 
-        //if (Pause == null) return;
+        if (Pause == null) return;
 
+        TutorialAction.action.Enable();
 
         TutorialUI.SetActive(true);
 
-        //Pause.GetComponent<PauseMenu>().pauseAction.action.Disable();
+        Pause.GetComponent<PauseMenu>().pauseAction.action.Disable();
 
         Time.timeScale = 0f;
     }
@@ -38,7 +39,9 @@ public class TutorialManager : MonoBehaviour
             
             TutorialUI.SetActive(false);
 
-            //Pause.GetComponent<PauseMenu>().pauseAction.action.Enable();
+            TutorialAction.action.Disable();
+            
+            Pause.GetComponent<PauseMenu>().pauseAction.action.Enable();
         }
     }
 }

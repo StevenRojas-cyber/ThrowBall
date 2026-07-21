@@ -55,7 +55,11 @@ public class Items : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+        if(currentState == ItemState.Throwed)
+        {
+            float rotationZ = Mathf.Atan2(itemRigidBody.linearVelocity.y, itemRigidBody.linearVelocity.x) * Mathf.Rad2Deg;
+            transform.LookAt(transform.position + Vector3.forward * rotationZ);
+        }
     }
 
     protected virtual void PrintName()

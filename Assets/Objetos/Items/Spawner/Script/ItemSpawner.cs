@@ -46,13 +46,17 @@ public class ItemSpawner : MonoBehaviour
 
 
 
-        // Calculamos una posición aleatoria dentro del área del suelo
+        //Este bloque se encarga de calcular la posición de spawn del item dentro del área del suelo
+        // Obtenemos la longitud del suelo a partir del collider
         float groundLenght = groundCollider.bounds.size.x;
 
+        // Obtenemos la altura del suelo a partir del collider
         float groundHeight = groundCollider.bounds.extents.y;
 
+        // Calculamos una posición aleatoria dentro del área del suelo
         float randomX = Random.Range(groundCollider.bounds.min.x, groundCollider.bounds.max.x);
 
+        //Posición de spawn del item, ajustando la altura para que aparezca justo encima del suelo
         Vector3 spawnPos = new Vector3(randomX, groundCollider.bounds.min.y + groundHeight, 0);
 
 

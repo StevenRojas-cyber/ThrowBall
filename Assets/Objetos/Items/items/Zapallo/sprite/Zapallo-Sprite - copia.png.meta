@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: b65413f254141694b8244e6d194981c7
+guid: a9b320cfdc12368438c8504aa900d99c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6470460504253458178
-    second: 3_0
+      213: -4984861181237613457
+    second: Zapallo-Sprite - copia_0
+  - first:
+      213: -1911991933355865691
+    second: Zapallo-Sprite - copia_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +116,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_0
+      name: Zapallo-Sprite - copia_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 311
+        width: 304
         height: 112
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef817ce047e4436a0800000000000000
-      internalID: -6470460504253458178
+      spriteID: f6ca2b5aa2732dab0800000000000000
+      internalID: -4984861181237613457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Zapallo-Sprite - copia_1
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 72
+        width: 9
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a949ee777d3775e0800000000000000
+      internalID: -1911991933355865691
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 767077d9bcf6d984eb77f847ed208724
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +173,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3_0: -6470460504253458178
+      Zapallo-Sprite - copia_0: -4984861181237613457
+      Zapallo-Sprite - copia_1: -1911991933355865691
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

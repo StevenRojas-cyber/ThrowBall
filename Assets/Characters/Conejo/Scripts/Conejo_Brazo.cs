@@ -39,7 +39,7 @@ public class Conejo_Brazo : MonoBehaviour
         item.transform.SetParent(transform);
         item.transform.localPosition = Vector3.zero;
         
-        item.transform.Rotate(0,0,90);
+        item.transform.Rotate(0,0,0);
         item.GetComponent<Rigidbody2D>().simulated = false;
 
         CurrentHandState = HandState.HoldingItem;
@@ -63,7 +63,6 @@ public class Conejo_Brazo : MonoBehaviour
         itemRB.bodyType = RigidbodyType2D.Dynamic;
         itemRB.gravityScale = 1f;
 
-
         itemCol.isTrigger = false;
 
 
@@ -86,16 +85,13 @@ public class Conejo_Brazo : MonoBehaviour
 
         Physics2D.IgnoreCollision(itemCol, playerCol, true);
 
-
         itemRB.linearVelocity = throwDirection * item.itemTrowVelocity;
-
         
         StartCoroutine(ReenableCollision(itemCol, playerCol, 0.3f));
 
 
         CurrentHandState = HandState.Empty;
         OwnerPlayer.GetComponent<Conejo_CharcterController>().trowAction.action.Disable();
-
     }
 
     private IEnumerator ReenableCollision(Collider2D itemCol, Collider2D playerCol, float Delay)

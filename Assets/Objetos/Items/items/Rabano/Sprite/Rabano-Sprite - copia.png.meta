@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b65413f254141694b8244e6d194981c7
+guid: 86f5a3c6eb4cfe546952e86ca984dec8
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6470460504253458178
-    second: 3_0
+      213: -6408616870900776489
+    second: Rabano-Sprite - copia_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_0
+      name: Rabano-Sprite - copia_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 311
-        height: 112
+        x: 1
+        y: 20
+        width: 310
+        height: 82
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef817ce047e4436a0800000000000000
-      internalID: -6470460504253458178
+      spriteID: 7d1426409e40017a0800000000000000
+      internalID: -6408616870900776489
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 767077d9bcf6d984eb77f847ed208724
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3_0: -6470460504253458178
+      Rabano-Sprite - copia_0: -6408616870900776489
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

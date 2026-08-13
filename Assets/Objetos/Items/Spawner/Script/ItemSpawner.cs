@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ItemSpawner : MonoBehaviour
@@ -13,9 +14,9 @@ public class ItemSpawner : MonoBehaviour
     public float maxIncrement = 1f; // Incremento máximo para reducir el tiempo de spawn
 
     [Header("Emerge Animation Settings")]
-    public float emergeHeight = 2f;
-    public float emergeSpeed = 2f;
-    public float GroundLenght;
+    public float emergeHeight = 2f; // Altura a la que el item emerge del suelo
+    public float emergeSpeed = 2f; // Velocidad a la que el item emerge del suelo
+    public float GroundLenght; // Longitud del suelo para determinar el área de spawn
     public BoxCollider2D groundCollider; // Collider del suelo para determinar el área de spawn
 
     
@@ -39,15 +40,26 @@ public class ItemSpawner : MonoBehaviour
 
     void SpawnItem()
     {
+        // Seleccionamos un prefab aleatorio de la lista de prefabs
         int randomIndex = Random.Range(0, itemPrefab.Length);
         GameObject prefab = itemPrefab[randomIndex];
 
-        float groundLenght = groundCollider.size.x;
-        float randomX = Random.Range(-groundLenght / 2, groundLenght / 2);
 
-        Vector3 spawnPos = transform.position + new Vector3(randomX, -emergeHeight, 0);
 
-        GameObject item = Instantiate(prefab, spawnPos, Quaternion.identity);
+        // Calculamos una posición aleatoria dentro del área del suelo
+        float groundLenght = groundCollider.bounds.size.x;
+
+        float groundHeight = groundCollider.bounds.extents.y;
+
+        float randomX = Random.Range(groundCollider.bounds.min.x, groundCollider.bounds.max.x);
+
+        Vector3 spawnPos = new Vector3(randomX, groundCollider.bounds.min.y + groundHeight, 0);
+
+
+
+
+        // Instanciamos el item y lo agregamos a la lista de items en el suelo
+        GameObject item = Instantiate(prefab, spawnPos, prefab.name.Contains("Cebolla") ? Quaternion.Euler(0, 0, 90) : Quaternion.Euler(0, 0, -90));
         ItemsOnGround.Add(item);
 
         Items itemScript = item.GetComponent<Items>();

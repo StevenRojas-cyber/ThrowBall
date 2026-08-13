@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b65413f254141694b8244e6d194981c7
+guid: 883220fe9463c57409af3d0b8fdb136f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -6470460504253458178
-    second: 3_0
+      213: -4012627465810108785
+    second: Cebolla_Sprite - copia_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 3_0
+      name: Cebolla_Sprite - copia_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 311
-        height: 112
+        y: 1
+        width: 308
+        height: 110
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: ef817ce047e4436a0800000000000000
-      internalID: -6470460504253458178
+      spriteID: f8e996464984058c0800000000000000
+      internalID: -4012627465810108785
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 767077d9bcf6d984eb77f847ed208724
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      3_0: -6470460504253458178
+      Cebolla_Sprite - copia_0: -4012627465810108785
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

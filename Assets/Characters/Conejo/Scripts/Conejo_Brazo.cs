@@ -31,15 +31,18 @@ public class Conejo_Brazo : MonoBehaviour
         
     }
 
+    //Esta funcion adjunta el item en es suelo al brazo del jugador
     public void AttachItemHand(Items item)
     {
-        
         if (item == null) return;
-        
+
+        //Setea el estado y lugar del item en la mano del jugador
         item.transform.SetParent(transform);
-        item.transform.localPosition = Vector3.zero;
+        item.transform.localPosition = Vector3.down;
+
+        //Rotar el item a la rotacion por defecto
+        item.transform.rotation = Quaternion.Euler(0, 0, 0);
         
-        item.transform.Rotate(0,0,0);
         item.GetComponent<Rigidbody2D>().simulated = false;
 
         CurrentHandState = HandState.HoldingItem;
@@ -47,10 +50,12 @@ public class Conejo_Brazo : MonoBehaviour
 
     }
 
+    //Funcion que lanza el item que tiene el jugador en la mano
     public void TrowItem(Items item)
     {
         if (item == null) return;
 
+        // Obtener referencias a los componentes necesarios del item en la mano
         Rigidbody2D itemRB = item.GetComponent<Rigidbody2D>();
         Collider2D itemCol = item.GetComponent<Collider2D>();
         Collider2D playerCol = OwnerPlayer.GetComponent<Collider2D>();
@@ -66,7 +71,7 @@ public class Conejo_Brazo : MonoBehaviour
         itemCol.isTrigger = false;
 
 
-        
+        // Calcular la dirección de lanzamiento basada en el ángulo y la dirección del jugador       
         float angleRadians = item.itemTrowAngle * Mathf.Deg2Rad;
 
         float facingDirection = Mathf.Sign(OwnerPlayer.transform.localScale.x);
@@ -76,8 +81,8 @@ public class Conejo_Brazo : MonoBehaviour
         float throwRotationZ = Mathf.Atan2(throwDirection.y, throwDirection.x) * Mathf.Rad2Deg;
 
         
-        item.transform.position = OwnerPlayer.transform.position + (Vector3)(throwDirection.normalized * 3.5f); 
         // Ajusta la posición de lanzamiento según sea necesario
+        item.transform.position = OwnerPlayer.transform.position + (Vector3)(throwDirection.normalized * 3.5f); 
 
         item.transform.rotation = Quaternion.Euler(0, 0, throwRotationZ);
 

@@ -33,13 +33,19 @@ public class Zorro_Brazo : MonoBehaviour
 
     }
 
+    //Esta funcion adjunta el item en es suelo al brazo del jugador
     public void AttachItemHand(Items item)
     {
         if (item == null) return;
-        item.transform.SetParent(transform);
-        item.transform.localPosition = Vector3.zero;
 
-        item.transform.Rotate(0, 0, -90);
+        //Setea el estado y lugar del item en la mano del jugador
+        item.transform.SetParent(transform);
+        item.transform.localPosition = Vector3.down;
+
+        //Rotar el item a la rotacion por defecto
+        item.transform.rotation = Quaternion.Euler(0,0,0);
+
+
         item.GetComponent<Rigidbody2D>().simulated = false;
 
         CurrentHandState = HandState.HoldingItem;
@@ -50,36 +56,47 @@ public class Zorro_Brazo : MonoBehaviour
     {
         if (item == null) return;
 
-        transform.localScale = new Vector3(-1,1,1);
-
+        //Obtener los componentes necesarios del item y del jugador
         Rigidbody2D itemRB = item.GetComponent<Rigidbody2D>();
         Collider2D itemCol = item.GetComponent<Collider2D>();
         Collider2D playerCol = OwnerPlayer.GetComponent<Collider2D>();
 
-        print("Trowing item: " + item.name);
+
+        // Cambiar el estado del item a "Throwed"
+        item.currentState = Items.ItemState.Throwed;
+
         item.transform.SetParent(null);
+
 
         itemRB.simulated = true;
         itemRB.bodyType = RigidbodyType2D.Dynamic;
         itemRB.gravityScale = 1f;
-
+        
         itemCol.isTrigger = false;
 
-        item.currentState = Items.ItemState.Throwed;
 
+        // Calcular la dirección de lanzamiento basada en el ángulo y la dirección del jugador
         float angleRadians = item.itemTrowAngle * Mathf.Deg2Rad;
-        //float direction = Mathf.Sign(OwnerPlayer.transform.localScale.x);
+        
         float facingDirection = Mathf.Sign(OwnerPlayer.transform.localScale.x);
 
         Vector2 throwDirection = new Vector2(Mathf.Cos(angleRadians) * facingDirection, Mathf.Sin(angleRadians));
 
-        item.transform.position = OwnerPlayer.transform.position + (Vector3)(throwDirection.normalized * 3.5f); // Ajusta la posición de lanzamiento según sea necesario
+        float throwRotationZ = Mathf.Atan2(throwDirection.y, throwDirection.x) * Mathf.Rad2Deg;
+
+        // Ajusta la posición de lanzamiento según sea necesario
+        item.transform.position = OwnerPlayer.transform.position + (Vector3)(throwDirection.normalized * 3.5f); 
+
+        item.transform.rotation = Quaternion.Euler(0, 0, throwRotationZ);
+
+
 
         Physics2D.IgnoreCollision(itemCol, playerCol, true);
 
         itemRB.linearVelocity = throwDirection * item.itemTrowVelocity;
 
         StartCoroutine(ReenableCollision(itemCol, playerCol, 0.3f));
+
 
         CurrentHandState = HandState.Empty;
         OwnerPlayer.GetComponent<Zorro_CharacterController>().trowAction.action.Disable();

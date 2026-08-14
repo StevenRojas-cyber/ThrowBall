@@ -322,8 +322,8 @@ MonoBehaviour:
   minSpawnTime: 2
   maxSpawnTime: 5
   maxIncrement: 1
-  emergeHeight: 2
-  emergeSpeed: 1
+  emergeHeight: 1
+  emergeSpeed: 2
   GroundLenght: 0
   groundCollider: {fileID: 25497040}
 --- !u!1 &160100311
@@ -5685,8 +5685,8 @@ MonoBehaviour:
   minSpawnTime: 2
   maxSpawnTime: 5
   maxIncrement: 1
-  emergeHeight: 2
-  emergeSpeed: 1
+  emergeHeight: 1
+  emergeSpeed: 2
   GroundLenght: 0
   groundCollider: {fileID: 224436421}
 --- !u!50 &240075729 stripped
